@@ -23,6 +23,7 @@ alias g="git"
 alias gs="git status"
 alias s="cd ~/Sites"
 alias m="mate"
+alias m.="mate ."
 alias sshr="ssh -R 52698:localhost:52698" # SSH
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
