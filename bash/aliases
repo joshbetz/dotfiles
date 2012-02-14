@@ -6,6 +6,9 @@ function take {
   cd $1
 }
 
+# Resource .bashrc
+alias bashrc="source ~/.bashrc"
+
 # Fix and shrink png files. Pass infile and outfile.
 alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 
