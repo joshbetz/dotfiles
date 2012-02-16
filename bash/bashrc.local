@@ -1,0 +1,17 @@
+# Wisc CS .bashrc.local
+
+export PATH=$PATH:~/bin
+
+# Shortcuts
+alias 354="cd ~/private/cs354"
+alias ch1="ls -l /p/course/cs354-common/public/spring12.handin/betz/a1"
+alias handin1="/s/handin/bin/handin -c cs354-1 -a a1 -d ."
+
+# Aliases to cc
+function co() {
+  cc -o $1 $1.c
+}
+
+function cr() {
+  co $1 && $1
+}

@@ -6,9 +6,6 @@ function take {
   cd $1
 }
 
-# Resource .bashrc
-alias bashrc="source ~/.bashrc"
-
 # Fix and shrink png files. Pass infile and outfile.
 alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 
@@ -31,9 +28,12 @@ alias vm="/Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless"
 alias g="git"
 alias gs="git status"
 alias s="cd ~/Sites"
+alias src="cd ~/src"
 alias m="mate"
 alias m.="mate ."
 alias sshr="ssh -R 52698:localhost:52698" # SSH
+alias mb="m ~/bin"
+alias bashrc="source ~/.bashrc"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
