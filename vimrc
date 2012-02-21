@@ -20,7 +20,6 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
-colorscheme twilight
 
 " ================ Search Settings  =================
 
