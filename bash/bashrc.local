@@ -1,6 +1,6 @@
 # Wisc CS .bashrc.local
 
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:/p/course/cs354-common/public/bin
 
 # Shortcuts
 alias 354="cd ~/private/cs354"
