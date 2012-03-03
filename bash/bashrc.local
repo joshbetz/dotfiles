@@ -4,8 +4,8 @@ export PATH=$PATH:~/bin:/p/course/cs354-common/public/bin
 
 # Shortcuts
 alias 354="cd ~/private/cs354"
-alias ch1="ls -l /p/course/cs354-common/public/spring12.handin/betz/a1"
-alias handin1="/s/handin/bin/handin -c cs354-1 -a a1 -d ."
+alias ch2="ls -l /p/course/cs354-common/public/spring12.handin/betz/a2"
+alias handin2="/s/handin/bin/handin -c cs354-1 -a a2 -d ."
 
 # Aliases to cc
 function co() {
