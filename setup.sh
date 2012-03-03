@@ -1,11 +1,14 @@
+# Make a place to backup the files
+mkdir -p ~/bin/settings_backup
+
 # Setup ~/.bash_profile & ~/.bashrc
 if [ -f ~/.bash_profile ];
 then
-  rm ~/.bash_profile
+  mv ~/.bash_profile ~/bin/settings_backup
 fi
 if [ -f rm ~/.bashrc ];
 then
-  rm ~/.bashrc
+  mv ~/.bashrc ~/bin/settings_backup
 fi
 cp ~/bin/defaults/bash_profile ~/.bash_profile
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
@@ -13,25 +16,25 @@ ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 # Setup .tm_properties
 if [ -f ~/.tm_properties ];
 then
-  rm ~/.tm_properties
+  mv ~/.tm_properties ~/bin/settings_backup
 fi
 ln -s ~/bin/dotfiles/tm_properties ~/.tm_properties
 
 # Setup .ssh/config
 if [ -f ~/.ssh/config ];
 then
-  rm ~/.ssh/config
+  mv ~/.ssh/config~/bin/settings_backup
 fi
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
 
 # Setup .vimrc & .vim/
 if [ -f ~/.vimrc ];
 then
-  rm ~/.vimrc
+  mv ~/.vimrc ~/bin/settings_backup
 fi
 if [ -f rm ~/.vim ];
 then
-  rm ~/.vim
+  mv ~/.vim ~/bin/settings_backup
 fi
 ln -s ~/bin/dotfiles/vimrc ~/.vimrc
 ln -s ~/bin/dotfiles/vim ~/.vim
@@ -39,6 +42,6 @@ ln -s ~/bin/dotfiles/vim ~/.vim
 # Setup ~/.zshrc
 if [ -f ~/.zshrc ];
 then
-  rm ~/.zshrc
+  mv ~/.zshrc ~/bin/settings_backup
 fi
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc
