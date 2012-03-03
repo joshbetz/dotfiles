@@ -13,7 +13,6 @@ alias lal='ls -lah'
 
 alias s='git status -sb $argv; return 0'
 alias d='gd $argv'
-alias m='mate $@'
 
 alias df='df -kh $argv'
 alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "window.location.reload()" in front document''
@@ -25,10 +24,9 @@ alias add_alias='mate -w ~/bin/dotfiles/zsh/git_aliases; cd ~/bin/git_dotfiles; 
 cd() {
   builtin cd "$@" && ls
 }
-function tm() {
-  mate
-  if [[ $(ls -l | grep tmproj | wc -l) -eq 0 ]]
+function m() {
+  if [[ $ARGC -eq 0 ]]
   then mate .
-  else open *.tmproj
+  else mate $@
   fi
 }
