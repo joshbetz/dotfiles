@@ -10,7 +10,10 @@ if [ -f rm ~/.bashrc ];
 then
   mv ~/.bashrc ~/bin/settings_backup
 fi
-cp ~/bin/defaults/bash_profile ~/.bash_profile
+if [ `uname` -eq 'Darwin' ];
+then
+  cp ~/bin/dotfiles/bash_profile ~/.bash_profile
+fi
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 
 # Setup .tm_properties
@@ -18,12 +21,15 @@ if [ -f ~/.tm_properties ];
 then
   mv ~/.tm_properties ~/bin/settings_backup
 fi
-ln -s ~/bin/dotfiles/tm_properties ~/.tm_properties
+if [ `uname` -eq 'Darwin' ];
+then
+  ln -s ~/bin/dotfiles/tm_properties ~/.tm_properties
+fi
 
 # Setup .ssh/config
 if [ -f ~/.ssh/config ];
 then
-  mv ~/.ssh/config~/bin/settings_backup
+  mv ~/.ssh/config ~/bin/settings_backup
 fi
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
 
