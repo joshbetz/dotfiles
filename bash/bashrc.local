@@ -15,3 +15,5 @@ function co() {
 function cr() {
   co $1 && $1
 }
+
+. ~/bin/dotfiles/zsh/git_aliases
