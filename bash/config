@@ -35,4 +35,4 @@ UCYAN='\e[4;36m'        # Cyan
 UWHITE='\e[4;37m'       # White
 
 
-PS1="\n\u:\w \[$BOLD\]\$(vcprompt)\[$NO_COLOR\] \n→ "
+PS1="\n\u@\H:\w \[$BOLD\]\$(vcprompt)\[$NO_COLOR\] \n→ "
