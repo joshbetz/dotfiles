@@ -6,6 +6,11 @@ function take {
   cd $1
 }
 
+function cd() {
+  builtin cd "$@" && ls
+}
+
+
 # Fix and shrink png files. Pass infile and outfile.
 alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 

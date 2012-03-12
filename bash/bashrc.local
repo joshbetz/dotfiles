@@ -1,5 +1,7 @@
 # Wisc CS .bashrc.local
 
+. ~/bin/dotfiles/bashrc
+
 export PATH=$PATH:~/bin:/p/course/cs354-common/public/bin
 
 # Shortcuts
@@ -15,5 +17,3 @@ function co() {
 function cr() {
   co $1 && $1
 }
-
-. ~/bin/dotfiles/zsh/git_aliases
