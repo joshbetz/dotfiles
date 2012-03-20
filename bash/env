@@ -1,2 +1,2 @@
 export EDITOR="mate -w"
-export PATH=$PATH:~/bin
+export PATH=/usr/local/bin:$PATH:~/bin
