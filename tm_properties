@@ -15,6 +15,7 @@ include = "{.tm_properties,.htaccess,.gitignore}"
 # File type specific configuration
 [ text ]
 showInvisibles   = true
+softWrap         = true
 
 [ source ]
 softTabs         = true
