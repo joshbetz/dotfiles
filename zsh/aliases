@@ -31,3 +31,5 @@ function m() {
   else mate $@
   fi
 }
+
+alias reload!='source ~/.zshrc'

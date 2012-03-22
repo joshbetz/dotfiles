@@ -42,3 +42,8 @@ alias bashrc="source ~/.bashrc"
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+# Sleep timer
+sleeptime() {
+  sleep $1; osascript -e 'tell application "System Events" to sleep'
+}
