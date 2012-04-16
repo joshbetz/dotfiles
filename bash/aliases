@@ -27,7 +27,7 @@ alias flush="dscacheutil -flushcache"
 alias server="open http://localhost:8080/ && python -m SimpleHTTPServer 8080"
 
 # VMs
-alias vm="/Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless"
+alias vm="/Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm"
 
 # Shortcuts
 alias g="git"
