@@ -1,8 +1,10 @@
 {
-	"auto_upgrade_last_run": 1335374698,
+	"auto_upgrade_last_run": 1339765746,
 	"installed_packages":
 	[
-		"Laravel-Blade"
+		"Laravel-Blade",
+		"Package Control",
+		"Wordpress"
 	],
 	"repositories":
 	[
