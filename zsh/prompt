@@ -1,5 +1,5 @@
 project_pwd() {
-  echo $PWD | sed -e "s/\/Volumes\/Josh/~/" -e "s/~\/src\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+  echo $PWD | sed -e "s/\/Users\/josh/~/" -e "s/~\/src\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
 }
 
 precmd () {print -Pn "\e]2; %~/ \a"}
