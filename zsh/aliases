@@ -33,5 +33,8 @@ function m() {
   else mate $@
   fi
 }
+function a() {
+  ack --before-context=10 --pager='less -FRX' "$*";
+}
 
 alias reload!='source ~/.zshrc'
