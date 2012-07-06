@@ -24,6 +24,12 @@ alias add_alias='sub -w ~/bin/dotfiles/zsh/git_aliases; cd ~/bin/git_dotfiles; g
 
 alias cdw='cd ~/src/wordpress/trunk'
 
+function a() {
+  if [[ $ARGC -eq 0 ]]
+  then ack
+  else ack --before-context=10 --pager='less -FRX' "$*";
+  fi
+}
 cd() {
   builtin cd "$@" && ls
 }
@@ -32,9 +38,6 @@ function m() {
   then mate .
   else mate $@
   fi
-}
-function a() {
-  ack --before-context=10 --pager='less -FRX' "$*";
 }
 
 alias reload!='source ~/.zshrc'
