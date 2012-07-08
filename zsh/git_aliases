@@ -1,3 +1,4 @@
+alias g='git'
 alias ga='git add'
 alias gap='ga -p'
 alias gau='git add -u'

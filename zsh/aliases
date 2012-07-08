@@ -24,6 +24,7 @@ alias add_alias='sub -w ~/bin/dotfiles/zsh/git_aliases; cd ~/bin/git_dotfiles; g
 
 alias af='a function $*'
 alias cdw='cd ~/src/wordpress/trunk'
+alias m.='m ~/bin/dotfiles'
 
 function a() {
   if [[ $ARGC -eq 0 ]]
@@ -36,8 +37,8 @@ cd() {
 }
 function m() {
   if [[ $ARGC -eq 0 ]]
-  then mate .
-  else mate $@
+  then sub .
+  else sub $@
   fi
 }
 
