@@ -38,6 +38,7 @@ gls() {
 }
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
+alias gms='git merge --squash'
 alias gp='git push'
 alias gpa='gp origin && gp production'
 alias gpt='gp --tags'
