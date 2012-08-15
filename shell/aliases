@@ -8,8 +8,7 @@ function take {
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias localip="ipconfig getifaddr en0"
 alias whois="whois -h whois-servers.net"
 
 # Start an HTTP server from a directory
