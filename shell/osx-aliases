@@ -1,0 +1,20 @@
+# VMs
+alias vm="/Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm"
+
+# Sleep timer
+sleeptime() {
+  sleep $1; osascript -e 'tell application "System Events" to sleep'
+}
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+alias ls='ls -G'
+alias du='du -k -d 1 $argv'
+
+alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "window.location.reload()" in front document''
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume 10'"
+alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"

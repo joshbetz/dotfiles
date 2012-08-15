@@ -1,0 +1,5 @@
+# Add my bin directory to the path
+export PATH=/usr/local/bin:$PATH:~/bin
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin

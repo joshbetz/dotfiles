@@ -1,0 +1,49 @@
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+
+function take {
+  mkdir $1
+  cd $1
+}
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias whois="whois -h whois-servers.net"
+
+# Start an HTTP server from a directory
+alias server="open http://localhost:8080/ && python -m SimpleHTTPServer 8080"
+
+alias l='ls'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lal='ls -lah'
+
+alias s='git status -sb $argv; return 0'
+alias d='gd $argv'
+
+alias df='df -kh $argv'
+alias tigs='tig status $argv'
+
+# Ack Aliases
+alias ack='ack --pager="less -FRX"'
+a() { ack --before-context=10 "$*"; }
+af() { a "function $*"; }
+afc() { af "$*\("; }
+
+# CD Aliases
+alias cdw='cd ~/src/wordpress/trunk'
+cd() {
+  builtin cd "$@" && ls
+}
+
+alias e.='$EDITOR ~/bin/dotfiles'
+e() {
+  if [ $ARGC -eq 0 ]
+  then $EDITOR .
+  else $EDITOR $@ && cd $@
+  fi
+}
+
+alias reload!='source ~/.zshrc'

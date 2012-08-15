@@ -1,0 +1,34 @@
+if [ -z "$DOTFILES" ]; then
+    DOTFILES="$HOME/bin/dotfiles"
+fi
+
+if [ -z "$SHELLFILES" ]; then
+    SHELLFILES="$DOTFILES/shell"
+fi
+
+function dotfile_load() {
+    [ -r $SHELLFILES/$1 ] && . $SHELLFILES/$1
+}
+
+if [[ "$SHELL" == "/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
+    SHELLFILES_SHELL=zsh
+else
+    SHELLFILES_SHELL=bash
+fi
+
+if [[ `uname -s` == "Darwin" ]]; then
+    SHELLFILES_OS=osx
+else
+    SHELLFILES_OS=linux
+fi
+
+dotfile_load ${SHELLFILES_SHELL}rc
+
+dotfile_load env
+dotfile_load ${SHELLFILES_SHELL}-env
+dotfile_load ${SHELLFILES_OS}-env
+
+dotfile_load aliases
+dotfile_load ${SHELLFILES_SHELL}-aliases
+dotfile_load ${SHELLFILES_OS}-aliases
+dotfile_load git-aliases

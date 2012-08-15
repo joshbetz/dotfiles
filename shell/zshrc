@@ -25,3 +25,17 @@ bindkey "\e\e[D"  backward-word
 bindkey '^' self-insert-backslash
 function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
 zle -N self-insert-backslash
+
+setopt prompt_subst
+setopt hist_ignore_dups
+
+project_pwd() {
+  echo $PWD | sed -e "s/\/Users\/josh/~/" -e "s/~\/src\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+}
+
+precmd () {print -Pn "\e]2; %~/ \a"}
+preexec () {print -Pn "\e]2; %~/ \a"}
+
+export PROMPT=$'%{\e[0;90m%}%n@%M%{\e[0m%}
+%{\e[0;%(?.32.31)m%}→%{\e[0m%} '
+export RPROMPT=$'%{\e[0;90m%}$(project_pwd)$(git_cwd_info)%{\e[0m%}'
