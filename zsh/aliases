@@ -36,8 +36,8 @@ cd() {
 }
 
 alias e.='sub ~/bin/dotfiles'
-function e() {
-  if [[ $ARGC -eq 0 ]]
+e() {
+  if [ $ARGC -eq 0 ]
   then sub .
   else sub $@ && cd $@
   fi
