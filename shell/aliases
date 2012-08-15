@@ -1,5 +1,6 @@
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
+alias df='df -kh $argv'	
 
 function take {
   mkdir $1
@@ -21,9 +22,6 @@ alias lal='ls -lah'
 
 alias s='git status -sb $argv; return 0'
 alias d='gd $argv'
-
-alias df='df -kh $argv'
-alias tigs='tig status $argv'
 
 # Ack Aliases
 alias ack='ack --pager="less -FRX"'
