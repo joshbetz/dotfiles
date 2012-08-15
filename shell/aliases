@@ -31,7 +31,7 @@ afc() { af "$*\("; }
 
 # CD Aliases
 alias cd.='cd ~/bin/dotfiles'
-alias cdw='cd ~/src/wordpress/trunk'
+alias cdw='cd ~/src/wordpress'
 cd() {
   builtin cd "$@" && ls
 }
