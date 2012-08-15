@@ -22,15 +22,14 @@ alias tigs='tig status $argv'
 alias add_alias='sub -w ~/bin/dotfiles/zsh/aliases; cd ~/bin/dotfiles; ga ~/bin/dotfiles/zsh/aliases; gc'
 alias add_alias='sub -w ~/bin/dotfiles/zsh/git_aliases; cd ~/bin/git_dotfiles; ga ~/bin/dotfiles/zsh/git_aliases; gc'
 
-alias af='a function $*'
-alias cdw='cd ~/src/wordpress/trunk'
+# Ack Aliases
+alias ack='ack --pager="less -FRX"'
+a() { ack --before-context=10 "$*"; }
+af() { a "function $*"; }
+afc() { af "$*\("; }
 
-function a() {
-  if [[ $ARGC -eq 0 ]]
-  then ack
-  else ack --before-context=10 --pager='less -FRX' "$*";
-  fi
-}
+# CD Aliases
+alias cdw='cd ~/src/wordpress/trunk'
 cd() {
   builtin cd "$@" && ls
 }
