@@ -18,4 +18,9 @@ alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "w
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 
-alias o='open .'
+o() {
+  if [ $ARGC -eq 0 ]
+  then open .
+  else open $@
+  fi
+}
