@@ -36,12 +36,7 @@ cd() {
   builtin cd "$@" && ls
 }
 
+alias e='$EDITOR'
 alias e.='$EDITOR ~/bin/dotfiles'
-e() {
-  if [ $ARGC -eq 0 ]
-  then $EDITOR .
-  else $EDITOR $@ && cd $@
-  fi
-}
 
 alias reload!='source ~/.zshrc'
