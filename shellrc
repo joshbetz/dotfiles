@@ -23,7 +23,7 @@ else
 fi
 
 if [[ `hostname` == *cs.wisc.edu ]]; then
-	SHELLFILES_HOST = wisc
+	SHELLFILES_HOST=wisc
 fi
 
 dotfile_load ${SHELLFILES_SHELL}rc
