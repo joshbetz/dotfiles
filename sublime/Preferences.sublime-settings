@@ -4,5 +4,7 @@
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"soda_classic_tabs": true,
+	"theme": "Soda Dark.sublime-theme"
 }
