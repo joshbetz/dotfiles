@@ -43,5 +43,3 @@ e() {
   else $EDITOR $@
   fi
 }
-
-alias reload!='source ~/.zshrc'
