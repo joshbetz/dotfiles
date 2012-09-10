@@ -1,0 +1,7 @@
+[user]
+	name = Josh Betz
+	email = j@joshbetz.com
+[github]
+	user = joshbetz
+[alias]
+	svn-diff = !git-svn-diff
