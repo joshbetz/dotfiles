@@ -44,7 +44,7 @@ e() {
   fi
 }
 
-alias makepot='php ~/src/makepot/makepot.php'
+alias makepot='php ~/bin/makepot/makepot.php'
 themepot() {
 	makepot wp-theme $1
 	mv *.pot $1/languages/
