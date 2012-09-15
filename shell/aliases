@@ -43,3 +43,9 @@ e() {
   else $EDITOR $@
   fi
 }
+
+alias makepot='php ~/src/makepot/makepot.php'
+themepot() {
+	makepot wp-theme $1
+	mv *.pot $1/languages/
+}
