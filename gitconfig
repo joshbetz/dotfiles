@@ -5,3 +5,5 @@
 	user = joshbetz
 [alias]
 	svn-diff = !git-svn-diff
+[core]
+	excludesfile = /Users/josh/.gitignore

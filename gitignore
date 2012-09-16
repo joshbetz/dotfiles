@@ -2,3 +2,4 @@
 ssh/config
 sublime/Package Control.sublime-settings
 vim/.netrwhist
+*.o
