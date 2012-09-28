@@ -1,6 +1,6 @@
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
-alias df='df -kh $argv'	
+alias df='df -kh $argv'
 
 function take {
   mkdir $1
