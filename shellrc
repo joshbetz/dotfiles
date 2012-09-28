@@ -30,12 +30,12 @@ dotfile_load ${SHELLFILES_SHELL}rc
 
 dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
-dotfile_load ${SHELFILES_HOST}-env
+dotfile_load ${SHELLFILES_HOST}-env
 dotfile_load env
 
 dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load ${SHELLFILES_OS}-aliases
-dotfile_load ${SHELFILES_HOST}-aliases
+dotfile_load ${SHELLFILES_HOST}-aliases
 dotfile_load aliases
 
 dotfile_load git-aliases
