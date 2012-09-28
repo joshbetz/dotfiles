@@ -38,7 +38,7 @@ cd() {
 
 alias e.='$EDITOR ~/bin/dotfiles'
 e() {
-  if [ $ARGC -eq 0 ]
+  if [ $# -eq 0 ]
   then $EDITOR .
   else $EDITOR $@
   fi
