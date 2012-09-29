@@ -23,6 +23,9 @@ alias lal='ls -lah'
 alias s='git status -sb $argv; return 0'
 alias d='gd $argv'
 
+# Show history
+alias history='fc -l 1'
+
 # Ack Aliases
 alias ack='ack --pager="less -FRX"'
 a() { ack --before-context=10 "$*"; }
