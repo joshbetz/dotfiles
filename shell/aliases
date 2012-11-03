@@ -32,6 +32,9 @@ a() { ack --before-context=10 "$*"; }
 af() { a "function &?$*"; }
 afc() { af "$*\("; }
 
+# Laravel Artisan
+alias artisan='php artisan $@ --env=local'
+
 # CD Aliases
 alias cd.='cd ~/bin/dotfiles'
 alias cdw='cd ~/src/wordpress'
