@@ -1,3 +1,4 @@
 [
-	{"keys": ["super+shift+r"], "command": "reindent" , "args": {"single_line": false}}
+	{"keys": ["super+shift+r"], "command": "reindent" , "args": {"single_line": false}},
+	{ "keys": ["ctrl+o"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} }
 ]

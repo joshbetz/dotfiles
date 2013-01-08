@@ -39,3 +39,5 @@ dotfile_load ${SHELLFILES_HOST}-aliases
 dotfile_load aliases
 
 dotfile_load git-aliases
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
