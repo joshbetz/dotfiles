@@ -32,6 +32,8 @@ alias ack='ack --pager="less -FRX"'
 a() { ack --before-context=10 "$*"; }
 af() { a "function &?$*"; }
 afc() { af "$*\("; }
+c() { ack --before-context=10 --ignore-dir=wp-content "$*" ~/src/wordpress/; }
+cf() { c "function &?$*"; }
 
 # Laravel Artisan
 alias artisan='php artisan $@ --env=local'
