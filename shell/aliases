@@ -2,7 +2,7 @@ alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 alias df='df -kh $argv'
 
-take() { mkdir $1 && cd $1 }
+take() { mkdir $1 && cd $1; }
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -10,11 +10,11 @@ alias localip="ipconfig getifaddr en0"
 alias whois="whois -h whois-servers.net"
 
 # Wikipedia
-wiki() { dig +short txt $1.wp.dg.cx }
+wiki() { dig +short txt $1.wp.dg.cx; }
 
 # Start an HTTP server from a directory
-server() { open http://$1/ && sudo php -S $1:80 }
-share() { php -S 0.0.0.0:8000 }
+server() { open http://$1/ && sudo php -S $1:80; }
+share() { open http://localhost:8000; php -S 0.0.0.0:8000; }
 
 alias l='ls'
 alias ll='ls -lh'
@@ -39,9 +39,10 @@ cf() { c "function &?$*"; }
 alias artisan='php artisan $@ --env=local'
 
 # CD Aliases
-cd() { builtin cd "$@" && ls }
+cd() { builtin cd "$@" && ls; }
 alias cd.='cd ~/bin/dotfiles'
 alias cdw='cd ~/src/wordpress'
+alias src='cd ~/src'
 
 alias e.='$EDITOR ~/bin/dotfiles'
 e() {
