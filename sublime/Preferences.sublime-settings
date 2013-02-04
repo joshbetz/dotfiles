@@ -9,9 +9,12 @@
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
 	"file_exclude_patterns": [
-		"*.min.js"
+		"*.min.js",
+		"*.min.css"
 	],
 	"folder_exclude_patterns": [
-		".sass-cache"
+		".sass-cache",
+		".svn",
+		".git"
 	]
 }
