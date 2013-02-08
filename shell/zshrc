@@ -5,7 +5,7 @@ SAVEHIST=1000000
 setopt extendedglob notify
 setopt append_history
 setopt inc_append_history
-unsetopt autocd
+setopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
