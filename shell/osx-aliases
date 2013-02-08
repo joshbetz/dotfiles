@@ -1,6 +1,6 @@
 # VMs
 vm() {
-	nohup /Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm $1 &
+	nohup /Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm $1 > /dev/null 2>&1&
 }
 
 # Sleep timer
