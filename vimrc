@@ -2,6 +2,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Enable plugins
+filetype plugin on
+
 " ================ General Config ====================
 
 set number                      "Line numbers are good
@@ -19,6 +22,9 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
+
+" strip trailing whitespace on save
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " ================ Search Settings  =================
 
@@ -87,3 +93,16 @@ function! HasPaste()
         return ''
     endif
 endfunction
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+

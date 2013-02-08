@@ -1,10 +1,27 @@
 {
 	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.min.js",
+		"*.min.css",
+		"*.class"
+	],
+	"folder_exclude_patterns":
+	[
+		".sass-cache",
+		".svn",
+		".git"
+	],
 	"font_face": "Inconsolata",
 	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"remember_open_files": false,
 	"soda_classic_tabs": true,
 	"theme": "Soda Dark.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true
 }

@@ -31,7 +31,7 @@
     // if an exception occurs when processing a function, should it be reraised so the user gets feedback? This is really
     // only useful to those writing functions. The average user just wants the plugin to work, so let's not reraise the
     // exception
-    "reraise_exceptions": false,
+    "reraise_exceptions": true,
 
     // If you want to have a syntax applied when new files are created, set new_file_syntax to the name of the syntax to use.
     // The format is exactly the same as "name" in the rules below. For example, if you want to have a new file use

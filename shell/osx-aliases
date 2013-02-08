@@ -1,9 +1,37 @@
 # VMs
-alias vm="/Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm"
+vm() {
+	nohup /Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm $1 > /dev/null 2>&1&
+}
 
 # Sleep timer
 sleeptime() {
   sleep $1; osascript -e 'tell application "System Events" to sleep'
+}
+
+# ssh-copy-id for the mac
+ssh-copy-id() {
+	USER=$(whoami)
+	USAGE="Usage: `basename $0` [-i FILE] user@host"
+	FILE="/Users/$USER/.ssh/id_rsa.pub"
+
+	if [ $# -lt 1 ]; then
+		echo "$USAGE"
+	fi
+
+
+	while getopts “i::” OPTION; do
+		case $OPTION in
+			i)
+				FILE=$OPTARG
+				;;
+			?)
+				echo "$USAGE"
+				;;
+		esac
+	done
+	shift $OPTIND-1
+
+	cat $FILE | ssh $1 "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 }
 
 # Flush Directory Service cache
@@ -23,4 +51,25 @@ o() {
   then open .
   else open $@
   fi
+}
+
+function woman() {
+  man -t "$@" | open -f -a Preview
+}
+
+function trash() {
+  local trash_dir="${HOME}/.Trash"
+  local temp_ifs=$IFS
+  IFS=$'\n'
+  for item in "$@"; do
+    if [[ -e "$item" ]]; then
+      item_name="$(basename $item)"
+      if [[ -e "${trash_dir}/${item_name}" ]]; then
+        mv -f "$item" "${trash_dir}/${item_name} $(date "+%H-%M-%S")"
+      else
+        mv -f "$item" "${trash_dir}/"
+      fi
+    fi
+  done
+  IFS=$temp_ifs
 }
