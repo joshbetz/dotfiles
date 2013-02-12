@@ -42,10 +42,6 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
-" Default color scheme
-set background=dark
-color solarized
-
 " strip trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
