@@ -1,9 +1,28 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" Enable plugins
-filetype plugin on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" Buffer management
+Bundle 'scrooloose/nerdtree'
+
+" Colorschemes
+Bundle 'altercation/vim-colors-solarized'
+
+filetype plugin indent on " required!
+" Breif help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
 " ================ General Config ====================
 
@@ -22,6 +41,10 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
+
+" Default color scheme
+set background=dark
+color solarized
 
 " strip trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
@@ -94,6 +117,13 @@ function! HasPaste()
     endif
 endfunction
 
+" =================================================
+
+" Automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
+" =================================================
+
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -106,3 +136,10 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" ===============================================
+
+" NERDTree configuration
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+map <Leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
