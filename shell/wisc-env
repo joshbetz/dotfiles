@@ -1,6 +1,3 @@
-# Handin directory
-export PATH=$PATH:/s/handin/bin
-
 project_pwd() {
 	  echo $PWD | sed -e "s/\/u\/b\/e\/betz/~/"
 }
