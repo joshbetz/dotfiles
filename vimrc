@@ -11,6 +11,9 @@ Bundle 'gmarik/vundle'
 " Buffer management
 Bundle 'scrooloose/nerdtree'
 
+" General
+Bundle 'jiangmiao/auto-pairs'
+
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 
