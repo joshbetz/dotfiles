@@ -4,3 +4,4 @@ alias ls537='ls -l /p/course/~cs537-1/public/handin/betz/$1'
 alias handin537='handin -c cs537-1 -a proj1 -d .'
 
 alias tmux="/unsup/tmux/bin/tmux"
+alias ack="/unsup/ack/bin/ack"
