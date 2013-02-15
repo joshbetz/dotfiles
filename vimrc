@@ -53,7 +53,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 set incsearch        "Find the next match as we type the search
 set hlsearch         "Hilight searches by default
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
-nnoremap <silent> <C-l> :noh<CR><C-l>
+nnoremap <silent> <C-p> :noh<CR><C-l>
 
 " ================ Turn Off Swap Files ==============
 
