@@ -48,6 +48,9 @@ syntax on
 " strip trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" Use HTML syntax for php template
+au BufRead,BufNewFile *.phtml setfiletype html
+
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
