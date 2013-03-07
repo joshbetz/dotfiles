@@ -37,6 +37,9 @@ set showmode                    "Show current mode down the bottom
 
 set autoread                    "Reload files changed outside vim
 
+set exrc                        "Enable per-directory .vimrc files
+set secure                      "Disable unsafe commands in local .vimrc files
+
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
