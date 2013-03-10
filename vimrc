@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 
 " Buffer management
 Bundle 'scrooloose/nerdtree'
+Bundle 'DetectIndent'
 
 " General
 Bundle 'jiangmiao/auto-pairs'
@@ -50,6 +51,9 @@ syntax on
 
 " strip trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Automatically Detect Indent
+:autocmd BufReadPost * :DetectIndent
 
 " Use HTML syntax for php template
 au BufRead,BufNewFile *.phtml setfiletype html

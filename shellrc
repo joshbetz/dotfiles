@@ -39,3 +39,6 @@ dotfile_load ${SHELLFILES_HOST}-aliases
 dotfile_load aliases
 
 dotfile_load git-aliases
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
