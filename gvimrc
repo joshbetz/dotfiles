@@ -7,6 +7,4 @@ set guifont=Inconsolata:h12
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 
-" Default color scheme
-set background=dark
-color solarized
+set guifont=Inconsolata\ for\ Powerline:h12

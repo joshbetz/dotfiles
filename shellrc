@@ -42,3 +42,11 @@ dotfile_load git-aliases
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added npm to PATH for executables
+export PATH="/usr/local/share/npm/bin:$PATH"
+
+### Added python to PATH for executable
+export PATH="/usr/local/share/python:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

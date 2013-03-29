@@ -11,9 +11,7 @@ Bundle 'gmarik/vundle'
 " Buffer management
 Bundle 'scrooloose/nerdtree'
 Bundle 'DetectIndent'
-
-" General
-Bundle 'jiangmiao/auto-pairs'
+Bundle 'Tabular'
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -41,6 +39,9 @@ set autoread                    "Reload files changed outside vim
 set exrc                        "Enable per-directory .vimrc files
 set secure                      "Disable unsafe commands in local .vimrc files
 
+set background=dark
+color solarized
+
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
@@ -53,7 +54,7 @@ syntax on
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Automatically Detect Indent
-:autocmd BufReadPost * :DetectIndent
+":autocmd BufReadPost * :DetectIndent
 
 " Use HTML syntax for php template
 au BufRead,BufNewFile *.phtml setfiletype html
@@ -92,6 +93,13 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
+" =============== Status Line =======================
+set laststatus=2
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+set statusline+=\ \ \ [%{&ff}/%Y]
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
+set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
 " ================ Completion =======================
 
 set wildmode=list:longest
@@ -111,13 +119,6 @@ nnoremap <silent> <C-j> <c-w>j
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-
-" =============== Status Line =======================
-set laststatus=2
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
-set statusline+=\ \ \ [%{&ff}/%Y]
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
-set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
@@ -139,6 +140,22 @@ au BufWritePost .vimrc so ~/.vimrc
 
 " =================================================
 
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number
+	else
+		set relativenumber
+	endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+au BufRead, BufNewFile :set relativenumber
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" =================================================
+
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -151,6 +168,15 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+if ! has('gui_running')
+	set ttimeoutlen=10
+	augroup FastEscape
+		autocmd!
+		au InsertEnter * set timeoutlen=0
+		au InsertLeave * set timeoutlen=1000
+	augroup END
+endif
+
 " ===============================================
 
 " NERDTree configuration
@@ -158,3 +184,17 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 map <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Tabular configuration
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
