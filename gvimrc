@@ -7,4 +7,3 @@ set guifont=Inconsolata:h12
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 
-set guifont=Inconsolata\ for\ Powerline:h12

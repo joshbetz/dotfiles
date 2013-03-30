@@ -41,6 +41,7 @@ set secure                      "Disable unsafe commands in local .vimrc files
 
 set background=dark
 color solarized
+set t_Co=256
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -94,11 +95,10 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " =============== Status Line =======================
+
+hi statusline guibg=White ctermfg=0 guifg=#003542 ctermbg=7
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 set laststatus=2
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
-set statusline+=\ \ \ [%{&ff}/%Y]
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
-set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 
 " ================ Completion =======================
 
@@ -106,6 +106,11 @@ set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
+
+" ================ Mouse ============================
+
+set mouse=a
+set ttymouse=xterm2
 
 " ================ Panes ============================
 

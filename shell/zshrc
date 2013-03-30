@@ -36,6 +36,6 @@ project_pwd() {
 precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
-export PROMPT=$'%{\e[0;90m%}%n@%M%{\e[0m%}
+export PROMPT=$'%{\e[0;26m%}%n@%M%{\e[0m%}
 %{\e[0;%(?.32.31)m%}→%{\e[0m%} '
-export RPROMPT=$'%{\e[0;90m%}$(project_pwd)$(git_cwd_info)%{\e[0m%}'
+export RPROMPT=$'%{\e[0;26m%}$(project_pwd)$(git_cwd_info)%{\e[0m%}'
