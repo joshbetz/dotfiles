@@ -1,3 +1,9 @@
+" Hack to fix solarized with spf13 -> https://github.com/spf13/spf13-vim/issues/240#issuecomment-15154420
+set background=dark
+let g:solarized_termcolors=16
+color solarized
+
+" Use Tabs, not spaces
 set noexpandtab
 
 " Automatically reload vimrc when it's saved
@@ -5,6 +11,9 @@ au BufWritePost .vimrc so ~/.vimrc
 
 " Reload files changed outside vim
 set autoread
+
+" Don't fold code by default
+set nofoldenable
 
 " Enable per-directory .vimrc files
 set exrc
