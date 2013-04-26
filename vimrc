@@ -1,10 +1,11 @@
-" Hack to fix solarized with spf13 -> https://github.com/spf13/spf13-vim/issues/240#issuecomment-15154420
-set background=dark
-let g:solarized_termcolors=16
-color solarized
+" Use Molokai color scheme
+color Tomorrow-Night
 
 " Use Tabs, not spaces
 set noexpandtab
+
+" Turn of spell checking in vim
+set nospell
 
 " Backspace and cursor keys don't wrap
 set whichwrap=<,>,[,]
@@ -49,6 +50,7 @@ endfunction
 " NERDTree configuration
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+let NERDTreeQuitOnOpen=0
 map <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
