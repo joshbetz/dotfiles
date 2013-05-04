@@ -38,6 +38,9 @@ cf() { c "function &?$*"; }
 # Laravel Artisan
 alias artisan='php artisan $@ --env=local'
 
+# Grunt
+alias gw='grunt && grunt watch'
+
 # CD Aliases
 cd() { builtin cd "$@" && ls; }
 alias cd.='cd ~/bin/dotfiles'
