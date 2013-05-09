@@ -1,2 +1,2 @@
-export EDITOR="mvim"
-export VISUAL="mvim -f"
+export EDITOR="sub"
+export VISUAL="sub -w"

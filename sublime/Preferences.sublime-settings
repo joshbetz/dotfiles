@@ -17,7 +17,8 @@
 	"font_size": 12,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"VintageLines"
 	],
 	"remember_open_files": false,
 	"soda_classic_tabs": true,
