@@ -1,2 +1,2 @@
 export EDITOR="sub"
-export VISUAL="sub -w -n"
+export VISUAL="sub -wn"

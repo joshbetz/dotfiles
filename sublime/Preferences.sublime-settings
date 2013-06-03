@@ -1,11 +1,12 @@
 {
-	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Eighties.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		"*.min.js",
 		"*.min.css",
-		"*.class"
+		"*.class",
+		"*.pyc"
 	],
 	"folder_exclude_patterns":
 	[
@@ -23,6 +24,5 @@
 	"remember_open_files": false,
 	"soda_classic_tabs": true,
 	"theme": "Soda Dark.sublime-theme",
-	"trim_trailing_white_space_on_save": true,
-	"vintage_start_in_command_mode": true
+	"trim_trailing_white_space_on_save": true
 }

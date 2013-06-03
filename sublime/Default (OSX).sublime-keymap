@@ -2,5 +2,6 @@
 	{"keys": ["super+shift+r"], "command": "reindent" , "args": {"single_line": false}},
 	{ "keys": ["ctrl+o"], "command": "run_macro_file", "args": {"file": "Packages/Default/Add Line.sublime-macro"} },
 	{ "keys": ["super+v"], "command": "paste_and_indent" },
-	{ "keys": ["super+shift+v"], "command": "paste" }
+	{ "keys": ["super+shift+v"], "command": "paste" },
+	{ "keys": ["alt+s"], "command": "toggle_side_bar" }
 ]
