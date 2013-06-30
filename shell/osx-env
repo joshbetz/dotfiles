@@ -1,2 +1,4 @@
 export EDITOR="sub"
 export VISUAL="sub -wn"
+
+export PATH=$PATH:vendor/bin

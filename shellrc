@@ -41,12 +41,12 @@ dotfile_load aliases
 dotfile_load git-aliases
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH:/usr/local/heroku/bin"
 
 ### Added npm to PATH for executables
-export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$PATH:/usr/local/share/npm/bin"
 
-### Added python to PATH for executable
-export PATH="/usr/local/share/python:$PATH"
+### Add local composer packages to path
+export PATH="$PATH:vendor/bin"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
