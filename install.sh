@@ -4,8 +4,8 @@
 CUR = pwd
 
 # Move Shell files into place
-rm -rf .zshrc
-rm -rf .bashrc
+mv ~/.zshrc ~/.zshrc.local
+mv ~/.bashrc ~/.bashrc.local
 ln -s ~/bin/dotfiles/shellrc ~/.zshrc
 ln -s ~/bin/dotfiles/shellrc ~/.bashrc
 
