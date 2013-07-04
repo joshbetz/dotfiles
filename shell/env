@@ -3,3 +3,12 @@ export PATH=/usr/local/bin:$PATH:~/bin
 
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
+
+### Added by the Heroku Toolbelt
+export PATH="$PATH:/usr/local/heroku/bin"
+
+### Added npm to PATH for executables
+export PATH="$PATH:/usr/local/share/npm/bin"
+
+### Add local composer packages to path
+export PATH="$PATH:vendor/bin"
