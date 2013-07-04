@@ -15,6 +15,10 @@ rm -rf ~/.gitignore
 ln -s ~/bin/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/bin/dotfiles/gitignore ~/.gitignore
 
+# Setup ruby
+rm -rf ~/.gemrc
+ln -s ~/bin/dotfiles/gemrc ~/.gemrc
+
 # Move Sublime files into place
 rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
 ln -s ~/bin/dotfiles/Sublime\ Text\ 3 ~/Library/Application\ Support/
