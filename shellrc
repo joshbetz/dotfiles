@@ -22,9 +22,7 @@ else
     SHELLFILES_OS=linux
 fi
 
-if [[ `hostname` == *cs.wisc.edu ]]; then
-	SHELLFILES_HOST=wisc
-fi
+SHELLFILES_HOST=`hostname | awk -F. '{ print $(NF-1)"."$NF }' | sed 's/\.local$//'`
 
 dotfile_load ${SHELLFILES_SHELL}rc
 
