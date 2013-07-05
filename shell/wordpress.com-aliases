@@ -1,0 +1,9 @@
+alias up="svn up"
+alias sup="cd ~/public_html && up && cd -"
+
+alias vip="cd ~/public_html/wp-content/themes/vip"
+
+alias d="svn diff | colordiff | less -R"
+alias s="svn stat"
+
+alias deploy='SSH_AUTH_SOCK= ssh -o StrictHostKeyChecking=no -i ~/.ssh/deployer-privkey deployer@mc.wordpress.com "sudo /usr/local/bin/deploy.sh ssh `hostname -s`"'
