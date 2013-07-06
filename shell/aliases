@@ -4,11 +4,6 @@ alias df='df -kh $argv'
 
 take() { mkdir $1 && cd $1; }
 
-up() {
-  rvm get stable && gem update;
-  brew update && brew upgrade;
-}
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -26,8 +21,35 @@ alias ll='ls -lh'
 alias la='ls -a'
 alias lal='ls -lah'
 
-alias s='git status -sb $argv; return 0'
-alias d='gd $argv'
+alias gits='git status -sb $argv; return 0'
+alias gitd='gd $argv'
+
+alias svns='svn stat'
+alias svnd='svn diff $argv | colordiff | less -R'
+
+function s() {
+	if is_git_repo; then
+		gits
+	elif is_svn_repo; then
+		svns
+	fi
+}
+
+function d() {
+	if is_git_repo; then
+		gitd
+	elif is_svn_repo; then
+		svnd
+	fi
+}
+
+function is_git_repo {
+	git branch > /dev/null 2>&1
+}
+
+function is_svn_repo {
+	test -d .svn
+}
 
 # Show history
 alias history='fc -l 1'
