@@ -10,7 +10,9 @@ function dotfile_load() {
     [ -r $SHELLFILES/$1 ] && . $SHELLFILES/$1
 }
 
-if [[ "$SHELL" == "/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
+if [[ "$SHELL" == "/usr/local/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
+    SHELLFILES_SHELL=zsh
+elif [[ "$SHELL" == "/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
     SHELLFILES_SHELL=zsh
 else
     SHELLFILES_SHELL=bash
