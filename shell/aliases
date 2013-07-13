@@ -29,17 +29,17 @@ alias svnd='svn diff $argv | colordiff | less -R'
 
 function s() {
 	if is_git_repo; then
-		gits
+		gits $@
 	elif is_svn_repo; then
-		svns
+		svns $@
 	fi
 }
 
 function d() {
 	if is_git_repo; then
-		gitd
+		gitd $@
 	elif is_svn_repo; then
-		svnd
+		svnd $@
 	fi
 }
 
