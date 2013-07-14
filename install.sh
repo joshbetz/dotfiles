@@ -1,28 +1,28 @@
 #!/bin/bash
 
 # Get current directory
-CUR = pwd
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Move Shell files into place
-mv ~/.zshrc ~/.zshrc.local
-mv ~/.bashrc ~/.bashrc.local
-ln -s ~/bin/dotfiles/shellrc ~/.zshrc
-ln -s ~/bin/dotfiles/shellrc ~/.bashrc
+[ -e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.local
+[ -e ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.local
+ln -s $DIR/shellrc ~/.zshrc
+ln -s $DIR/shellrc ~/.bashrc
 
 # Setup git
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
-ln -s ~/bin/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/bin/dotfiles/gitignore ~/.gitignore
+ln -s $DIR/gitconfig ~/.gitconfig
+ln -s $DIR/gitignore ~/.gitignore
 
 # Setup ack
 rm -rf ~/.ackrc
-ln -s ~/bin/dotfiles/ackrc ~/.ackrc
+ln -s $DIR/ackrc ~/.ackrc
 
 # Setup ruby
 rm -rf ~/.gemrc
-ln -s ~/bin/dotfiles/gemrc ~/.gemrc
+ln -s $DIR/gemrc ~/.gemrc
 
 # Move Sublime files into place
 rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
-ln -s ~/bin/dotfiles/Sublime\ Text\ 3 ~/Library/Application\ Support/
+ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
