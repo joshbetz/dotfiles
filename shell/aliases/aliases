@@ -1,0 +1,161 @@
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+alias df='df -kh $argv'
+
+take() { mkdir $1 && cd $1; }
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias whois="whois -h whois-servers.net"
+
+# Wikipedia
+wiki() { dig +short txt $1.wp.dg.cx; }
+
+# Start an HTTP server from a directory
+server() { open http://$1/ && sudo php -S $1:80; }
+share() { open http://localhost:8000; php -S 0.0.0.0:8000; }
+
+alias l='ls'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lal='ls -lah'
+
+alias gits='git status -sb $argv; return 0'
+alias gitd='gd $argv'
+
+alias svns='svn stat'
+alias svnd='svn diff $argv | colordiff | less -R'
+
+function s() {
+	if is_git_repo; then
+		gits $@
+	elif is_svn_repo; then
+		svns $@
+	fi
+}
+
+function d() {
+	if is_git_repo; then
+		gitd $@
+	elif is_svn_repo; then
+		svnd $@
+	fi
+}
+
+function is_git_repo {
+	git branch > /dev/null 2>&1
+}
+
+function is_svn_repo {
+	test -d .svn
+}
+
+# Show history
+alias history='fc -l 1'
+
+# Ack Aliases
+alias ack='ack --pager="less -FRX"'
+a() { ack --before-context=10 "$*"; }
+af() { a "function &?$*"; }
+afc() { af "$*\("; }
+c() { ack --before-context=10 --ignore-dir=wp-content "$*" ~/src/wordpress/; }
+cf() { c "function &?$*"; }
+
+# Laravel Artisan
+alias artisan='php artisan $@ --env=local'
+
+# Grunt
+alias gw='grunt && grunt watch'
+
+# CD Aliases
+cd() { builtin cd "$@" && ls; }
+alias cd.='cd ~/bin/dotfiles'
+alias cdw='cd ~/src/wordpress'
+alias src='cd ~/src'
+
+alias e.='$EDITOR ~/bin/dotfiles'
+e() {
+  if [ $# -eq 0 ]
+  then $EDITOR .
+  else $EDITOR $@
+  fi
+}
+
+function extract() {
+  local remove_archive
+  local success
+  local file_name
+  local extract_dir
+
+  if (( $# == 0 )); then
+    echo "Usage: extract [-option] [file ...]"
+    echo
+    echo Options:
+    echo "    -r, --remove    Remove archive."
+    echo
+    echo "Report bugs to <sorin.ionescu@gmail.com>."
+  fi
+
+  remove_archive=1
+  if [[ "$1" == "-r" ]] || [[ "$1" == "--remove" ]]; then
+    remove_archive=0
+    shift
+  fi
+
+  while (( $# > 0 )); do
+    if [[ ! -f "$1" ]]; then
+      echo "extract: '$1' is not a valid file" 1>&2
+      shift
+      continue
+    fi
+
+    success=0
+    file_name="$( basename "$1" )"
+    extract_dir="$( echo "$file_name" | sed "s/\.${1##*.}//g" )"
+    case "$1" in
+      (*.tar.gz|*.tgz) tar xvzf "$1" ;;
+      (*.tar.bz2|*.tbz|*.tbz2) tar xvjf "$1" ;;
+      (*.tar.xz|*.txz) tar --xz --help &> /dev/null \
+        && tar --xz -xvf "$1" \
+        || xzcat "$1" | tar xvf - ;;
+      (*.tar.zma|*.tlz) tar --lzma --help &> /dev/null \
+        && tar --lzma -xvf "$1" \
+        || lzcat "$1" | tar xvf - ;;
+      (*.tar) tar xvf "$1" ;;
+      (*.gz) gunzip "$1" ;;
+      (*.bz2) bunzip2 "$1" ;;
+      (*.xz) unxz "$1" ;;
+      (*.lzma) unlzma "$1" ;;
+      (*.Z) uncompress "$1" ;;
+      (*.zip) unzip "$1" -d $extract_dir ;;
+      (*.rar) unrar e -ad "$1" ;;
+      (*.7z) 7za x "$1" ;;
+      (*.deb)
+        mkdir -p "$extract_dir/control"
+        mkdir -p "$extract_dir/data"
+        cd "$extract_dir"; ar vx "../${1}" > /dev/null
+        cd control; tar xzvf ../control.tar.gz
+        cd ../data; tar xzvf ../data.tar.gz
+        cd ..; rm *.tar.gz debian-binary
+        cd ..
+      ;;
+      (*)
+        echo "extract: '$1' cannot be extracted" 1>&2
+        success=1
+      ;;
+    esac
+
+    (( success = $success > 0 ? $success : $? ))
+    (( $success == 0 )) && (( $remove_archive == 0 )) && rm "$1"
+    shift
+  done
+}
+
+alias x=extract
+
+alias makepot='php ~/bin/makepot/makepot.php'
+themepot() {
+	makepot wp-theme $1
+	mv *.pot $1/languages/
+}
