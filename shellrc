@@ -10,6 +10,12 @@ function dotfile_load() {
     [ -r $SHELLFILES/$1 ] && . $SHELLFILES/$1
 }
 
+function dotfile_load_dir() {
+	for f in $SHELLFILES/$1/*; do
+		. $f
+	done
+}
+
 if [[ "$SHELL" == "/usr/local/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
     SHELLFILES_SHELL=zsh
 elif [[ "$SHELL" == "/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
@@ -31,11 +37,9 @@ dotfile_load ${SHELLFILES_SHELL}rc
 dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
 dotfile_load ${SHELLFILES_HOST}-env
-dotfile_load env
+dotfile_load_dir env
 
-dotfile_load aliases
 dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load ${SHELLFILES_OS}-aliases
 dotfile_load ${SHELLFILES_HOST}-aliases
-
-dotfile_load git-aliases
+dotfile_load_dir aliases
