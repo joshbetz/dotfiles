@@ -1,0 +1,10 @@
+# Always color, even if piping to a another program
+--color
+
+# Use "less −r" as my pager
+--pager
+less -FRX
+
+# Ignore minified files
+--ignore-file=match:/[.]min[.]js$/
+--ignore-file=match:/[.]js[.]min$/

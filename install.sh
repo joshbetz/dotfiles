@@ -15,6 +15,10 @@ rm -rf ~/.gitignore
 ln -s ~/bin/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/bin/dotfiles/gitignore ~/.gitignore
 
+# Setup ack
+rm -rf ~/.ackrc
+ln -s ~/bin/dotfiles/ackrc ~/.ackrc
+
 # Setup ruby
 rm -rf ~/.gemrc
 ln -s ~/bin/dotfiles/gemrc ~/.gemrc
