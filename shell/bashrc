@@ -34,6 +34,9 @@ UPURPLE='\e[4;35m'      # Purple
 UCYAN='\e[4;36m'        # Cyan
 UWHITE='\e[4;37m'       # White
 
+# Turn on autocd
+shopt -s autocd
+
 # If not running interactively, don't do anything:
 [ -z "$PS1" ] && return
 shopt -s checkwinsize
