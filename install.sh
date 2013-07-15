@@ -9,6 +9,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -s $DIR/shellrc ~/.zshrc
 ln -s $DIR/shellrc ~/.bashrc
 
+# Setup VIM
+[ -e ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.local
+ln -s $DIR/vimrc ~/.vimrc
+
 # Setup git
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
