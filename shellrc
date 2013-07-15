@@ -6,6 +6,10 @@ if [ -z "$SHELLFILES" ]; then
     SHELLFILES="$DOTFILES/shell"
 fi
 
+function load() {
+	[ -r $1 ] && . $1
+}
+
 function dotfile_load() {
     [ -r $SHELLFILES/$1 ] && . $SHELLFILES/$1
 }
@@ -33,6 +37,7 @@ fi
 SHELLFILES_HOST=`hostname | awk -F. '{ print $(NF-1)"."$NF }' | sed 's/\.local$//'`
 
 dotfile_load ${SHELLFILES_SHELL}rc
+load ~/.${SHELLFILES_SHELL}rc.local
 
 dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
