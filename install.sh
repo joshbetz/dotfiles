@@ -3,14 +3,31 @@
 # Get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Move Shell files into place
-[ -e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.local
-[ -e ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.local
+# Setup ZSH
+if ! [ -h ~/.zshrc ]; then
+	[ -e ~/.zshrc.local ] && mv ~/.zshrc.local ~/.zshrc.local.bak
+	[ -e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.local
+else
+	rm ~/.zshrc
+fi
 ln -s $DIR/shellrc ~/.zshrc
+
+# Setup Bash
+if ! [ -h ~/.bashrc ]; then
+	[ -e ~/.bashrc.local ] && mv ~/.bashrc.local ~/.bashrc.local.bak
+	[ -e ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.local
+else
+	rm ~/.bashrc
+fi
 ln -s $DIR/shellrc ~/.bashrc
 
 # Setup VIM
-[ -e ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.local
+if ! [ -h ~/.vimrc ]; then
+	[ -e ~/.vimrc.local ] && mv ~/.vimrc.local.bak
+	[ -e ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.local
+else
+	rm ~/.vimrc
+fi
 ln -s $DIR/vimrc ~/.vimrc
 
 # Setup git
