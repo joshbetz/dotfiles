@@ -40,6 +40,10 @@ ln -s $DIR/gitignore ~/.gitignore
 rm -rf ~/.ackrc
 ln -s $DIR/ackrc ~/.ackrc
 
+# Setup tmux
+rm -rf ~/.tmux.conf
+ln -s $DIR/tmux ~/.tmux.conf
+
 # Setup ruby
 rm -rf ~/.gemrc
 ln -s $DIR/gemrc ~/.gemrc
