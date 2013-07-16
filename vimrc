@@ -2,6 +2,8 @@ set nocompatible
 
 syntax on
 
+set mouse=a
+
 set linespace=0
 set showmatch
 set incsearch
