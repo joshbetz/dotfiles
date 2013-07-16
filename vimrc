@@ -31,6 +31,20 @@ if has('persistent_undo')
 	set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
+" Use local vimrc if available 
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
+
+" Use local gvimrc if available and gui is running
+if has('gui_running')
+	if filereadable(expand("~/.gvimrc.local"))
+		source ~/.gvimrc.local
+	endif
+endif
+
+autocmd bufwritepost .vimrc source $MYVIMRC
+
 " Initialize directories
 function! InitializeDirectories()
 	let parent = $HOME
@@ -71,7 +85,5 @@ function! InitializeDirectories()
 		endif
 	endfor
 endfunction
-
-autocmd bufwritepost .vimrc source $MYVIMRC
 
 call InitializeDirectories()
