@@ -1,9 +1,11 @@
 set nocompatible
 
 syntax on
+colorscheme Tomorrow-Night
 
 set mouse=a
 
+set cursorline
 set linespace=0
 set showmatch
 set incsearch
