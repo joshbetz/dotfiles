@@ -30,6 +30,9 @@ else
 fi
 ln -s $DIR/vimrc ~/.vimrc
 
+[ -e ~/.vim ] && mv ~/.vim ~/.vim.bak
+ln -s $DIR/vim ~/.vim
+
 # Setup git
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
