@@ -87,5 +87,7 @@ ln -s $DIR/gemrc ~/.gemrc
 # =====================================
 # Setup Sublime
 # =====================================
-rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
-ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
+if [[ `uname -s` == "Darwin" ]]; then
+	rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
+	ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
+fi

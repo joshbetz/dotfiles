@@ -13,7 +13,11 @@ Bundle 'airblade/vim-gitgutter'
 
 Bundle 'scrooloose/syntastic'
 
-Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+if (has("python") || has("python3"))
+	Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+else
+	Bundle 'bling/vim-airline'
+endif
 
 filetype plugin indent on     " required!
 
