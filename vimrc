@@ -1,7 +1,38 @@
-set nocompatible
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'scrooloose/syntastic'
+
+Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+
+filetype plugin indent on     " required!
+
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+" =====================================================
+" My Config
+" =====================================================
 
 syntax on
 colorscheme Tomorrow-Night
+set t_Co=256
 
 set mouse=a
 
@@ -35,21 +66,35 @@ if has('persistent_undo')
 	set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
+" =====================================================
+" Powerline
+" =====================================================
+
+set ruler                   " Show the ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+set showcmd                 " Show partial commands in status line and
+                            " Selected characters/lines in visual mode
+
+set laststatus=2
+
+
+" =====================================================
+" Alternate Configs
+" =====================================================
+
 " Use local vimrc if available 
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
 
-" Use local gvimrc if available and gui is running
-if has('gui_running')
-	if filereadable(expand("~/.gvimrc.local"))
-		source ~/.gvimrc.local
-	endif
-endif
-
+" Reload vimrc live
 autocmd bufwritepost .vimrc source $MYVIMRC
 
+
+" =====================================================
 " Initialize directories
+" =====================================================
+
 function! InitializeDirectories()
 	let parent = $HOME
 	let prefix = 'vim'

@@ -39,8 +39,19 @@ else
 fi
 ln -s $DIR/vimrc ~/.vimrc
 
+if ! [ -h ~/.gvimrc ]; then
+	[ -e ~/.gvimrc.local ] && mv ~/.gvimrc.local.bak
+	[ -e ~/.gvimrc ] && mv ~/.gvimrc ~/.gvimrc.local
+else
+	rm ~/.gvimrc
+fi
+ln -s $DIR/gvimrc ~/.gvimrc
+
 [ -e ~/.vim ] && mv ~/.vim ~/.vim.bak
 ln -s $DIR/vim ~/.vim
+
+# Run Vundle
+vim +BundleInstall! +BundleClean +qall
 
 
 # =====================================
