@@ -21,7 +21,7 @@ sleeptime() {
 ssh-copy-id() {
 	USER=$(whoami)
 	USAGE="Usage: `basename $0` [-i FILE] user@host"
-	FILE="/Users/$USER/.ssh/id_rsa.pub"
+	FILE="$HOME/.ssh/id_rsa.pub"
 
 	if [ $# -lt 1 ]; then
 		echo "$USAGE"
