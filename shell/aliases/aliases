@@ -62,6 +62,9 @@ afc() { af "$*\("; }
 c() { ack --before-context=10 --ignore-dir=wp-content "$*" ~/src/wordpress/; }
 cf() { c "function &?$*"; }
 
+# Screen Aliases
+alias sc="screen -d -R -U"
+
 # Laravel Artisan
 alias artisan='php artisan $@ --env=local'
 

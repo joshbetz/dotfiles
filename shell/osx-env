@@ -1,4 +1,2 @@
 export EDITOR="sub"
 export VISUAL="vim"
-
-export PATH=$PATH:vendor/bin

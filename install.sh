@@ -3,52 +3,56 @@
 # Get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# =====================================
+# Installation Helpers
+# =====================================
+dotfiles_install() {
+	FILE=$1
+	rm -rf ~/.$FILE
+	ln -s $DIR/$FILE ~/.$FILE
+}
+
+dotfiles_backup() {
+	FILE=$1
+	if ! [ -h ~/.$FILE ]; then
+		[ -e ~/.$FILE.local ] && mv ~/.$FILE.local ~/.$FILE.local.bak
+		[ -e ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.local
+	fi
+}
+
+dotfiles_backup_shallow() {
+	FILE=$1
+	rm -rf ~/.$FILE.bak
+	[ -e ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.bak
+}
 
 # =====================================
 # Setup ZSH
 # =====================================
-if ! [ -h ~/.zshrc ]; then
-	[ -e ~/.zshrc.local ] && mv ~/.zshrc.local ~/.zshrc.local.bak
-	[ -e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.local
-else
-	rm ~/.zshrc
-fi
+dotfiles_backup zshrc
+rm -f ~/.zshrc
 ln -s $DIR/shellrc ~/.zshrc
 
 
 # =====================================
 # Setup Bash
 # =====================================
-if ! [ -h ~/.bashrc ]; then
-	[ -e ~/.bashrc.local ] && mv ~/.bashrc.local ~/.bashrc.local.bak
-	[ -e ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.local
-else
-	rm ~/.bashrc
-fi
+dotfiles_backup bashrc
+rm -f ~/.bashrc
 ln -s $DIR/shellrc ~/.bashrc
 
 
 # =====================================
 # Setup VIM
 # =====================================
-if ! [ -h ~/.vimrc ]; then
-	[ -e ~/.vimrc.local ] && mv ~/.vimrc.local.bak
-	[ -e ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.local
-else
-	rm ~/.vimrc
-fi
-ln -s $DIR/vimrc ~/.vimrc
+dotfiles_backup vimrc
+dotfiles_install vimrc
 
-if ! [ -h ~/.gvimrc ]; then
-	[ -e ~/.gvimrc.local ] && mv ~/.gvimrc.local.bak
-	[ -e ~/.gvimrc ] && mv ~/.gvimrc ~/.gvimrc.local
-else
-	rm ~/.gvimrc
-fi
-ln -s $DIR/gvimrc ~/.gvimrc
+dotfiles_backup gvimrc
+dotfiles_install gvimrc
 
-[ -e ~/.vim ] && mv ~/.vim ~/.vim.bak
-ln -s $DIR/vim ~/.vim
+dotfiles_backup_shallow vim
+dotfiles_install vim
 
 # Run Vundle
 vim +BundleInstall! +BundleClean +qall
@@ -57,31 +61,36 @@ vim +BundleInstall! +BundleClean +qall
 # =====================================
 # Setup git
 # =====================================
-rm -rf ~/.gitconfig
-rm -rf ~/.gitignore
-ln -s $DIR/gitconfig ~/.gitconfig
-ln -s $DIR/gitignore ~/.gitignore
+dotfiles_install gitconfig
+dotfiles_install gitignore
 
 
 # =====================================
 # Setup ack
 # =====================================
-rm -rf ~/.ackrc
-ln -s $DIR/ackrc ~/.ackrc
+dotfiles_backup_shallow ackrc
+dotfiles_install ackrc
+
+
+# =====================================
+# Setup screen
+# =====================================
+dotfiles_backup screenrc
+dotfiles_install screenrc
 
 
 # =====================================
 # Setup tmux
 # =====================================
-rm -rf ~/.tmux.conf
-ln -s $DIR/tmux ~/.tmux.conf
+dotfiles_backup_shallow tmux.conf
+dotfiles_install tmux.conf
 
 
 # =====================================
 # Setup ruby
 # =====================================
-rm -rf ~/.gemrc
-ln -s $DIR/gemrc ~/.gemrc
+dotfiles_backup_shallow gemrc
+dotfiles_install gemrc
 
 
 # =====================================
@@ -91,3 +100,6 @@ if [[ `uname -s` == "Darwin" ]]; then
 	rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
 	ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
 fi
+
+
+
