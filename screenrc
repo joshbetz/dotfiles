@@ -30,6 +30,16 @@ escape ^za
 bind c screen 1
 bind ^c screen 1
 bind 0 select 10
+
+# f1-8 switch to those windows (OSX keeps 9-12 reserved for dashboard)
+bindkey "^[OP" select 1
+bindkey "^[OQ" select 2
+bindkey "^[OR" select 3
+bindkey "^[OS" select 4
+bindkey "^[[15~" select 5
+bindkey "^[[17~" select 6
+bindkey "^[[18~" select 7
+bindkey "^[[19~" select 8
  
 # Maps some keyboard shortcuts
 bindkey -k k9 clear  # F9 = clear window

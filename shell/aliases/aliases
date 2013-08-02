@@ -25,7 +25,7 @@ alias lla='lal'
 alias gits='git status -sb $argv; return 0'
 alias gitd='gd $argv'
 
-alias svns='svn stat'
+alias svns='svn stat --ignore-externals'
 alias svnd='svn diff $argv | colordiff | less -R'
 
 function s() {
