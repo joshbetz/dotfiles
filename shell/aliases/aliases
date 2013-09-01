@@ -77,6 +77,25 @@ alias cd.='cd ~/bin/dotfiles'
 alias cdw='cd ~/src/wordpress'
 alias src='cd ~/src'
 
+bd() {
+  OLDPWD=`pwd`
+
+  if [ "$1" = "-s" ]; then
+    NEWPWD=`echo $OLDPWD | sed 's|\(.*/'$2'[^/]*/\).*|\1|'`
+    index=`echo $NEWPWD | awk '{ print index($1,"/'$2'"); }'`
+  else
+    NEWPWD=`echo $OLDPWD | sed 's|\(.*/'$1'/\).*|\1|'`
+    index=`echo $NEWPWD | awk '{ print index($1,"/'$1'/"); }'`
+  fi
+
+  if [ $index -eq 0 ]; then
+    echo "No such occurrence."
+  fi
+
+  echo $NEWPWD
+  cd "$NEWPWD"
+}
+
 alias e.='$EDITOR ~/bin/dotfiles'
 e() {
   if [ $# -eq 0 ]
