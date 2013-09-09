@@ -1,3 +1,5 @@
+alias password='date +%s | shasum -a 256 | base64 | head -c 64; echo'
+
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 alias df='df -kh $argv'
