@@ -1,0 +1,29 @@
+alias gits='git status -sb $argv; return 0'
+alias gitd='gd $argv'
+
+alias svns='svn stat --ignore-externals'
+alias svnd='svn diff $argv | colordiff | less -R'
+
+function s() {
+	if is_git_repo; then
+		gits $@
+	elif is_svn_repo; then
+		svns $@
+	fi
+}
+
+function d() {
+	if is_git_repo; then
+		gitd $@
+	elif is_svn_repo; then
+		svnd $@
+	fi
+}
+
+function is_git_repo {
+	git branch > /dev/null 2>&1
+}
+
+function is_svn_repo {
+	test -d .svn
+}
