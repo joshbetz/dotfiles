@@ -1,0 +1,31 @@
+{
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Eighties.tmTheme",
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.min.js",
+		"*.min.css",
+		"*.class",
+		"*.pyc",
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".sass-cache",
+		".svn",
+		".git",
+		".vagrant",
+		"xhprof"
+	],
+	"font_face": "Inconsolata",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"soda_classic_tabs": true,
+	"theme": "Soda Dark.sublime-theme",
+	"word_wrap": true
+}

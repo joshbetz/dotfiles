@@ -1,0 +1,6 @@
+Cache
+Index
+Local
+*.cache
+*.last-run
+Default*
