@@ -58,6 +58,7 @@ function is_svn_repo {
 alias history='fc -l 1'
 
 # Ack Aliases
+alias ack='ack --pager="less -FRX"'
 a() { ack --before-context=10 "$*"; }
 af() { a "function &?$*"; }
 afc() { af "$*\("; }
