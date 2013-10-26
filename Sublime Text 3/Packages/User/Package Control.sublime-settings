@@ -1,7 +1,10 @@
 {
 	"installed_packages":
 	[
+		"Alignment",
+		"DashDoc",
 		"GitGutter",
+		"Package Control",
 		"Pretty JSON",
 		"Puppet",
 		"rsub",
