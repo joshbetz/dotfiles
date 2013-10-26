@@ -101,5 +101,8 @@ if [[ `uname -s` == "Darwin" ]]; then
 	ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
 fi
 
-
-
+# =====================================
+# Setup Vagrant
+# =====================================
+mkdir -p ~/.vagrant.d/
+ln -s $DIR/Vagrantfile ~/.vagrant.d/Vagrantfile
