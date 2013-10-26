@@ -12,3 +12,6 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 
 ### Add local composer packages to path
 export PATH="$PATH:vendor/bin"
+
+### Add Packer to PATH
+export PATH="$PATH:/usr/local/packer"

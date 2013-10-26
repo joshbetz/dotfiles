@@ -42,7 +42,7 @@ load ~/.${SHELLFILES_SHELL}rc.local
 dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
 dotfile_load ${SHELLFILES_HOST}-env
-dotfile_load_dir env
+dotfile_load env
 
 dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load ${SHELLFILES_OS}-aliases
