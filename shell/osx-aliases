@@ -2,7 +2,7 @@
 alias cleandesk='chflags hidden ~/Desktop/*'
 alias nocleandesk='chflags nohidden ~/Desktop/*'
 
-up() {
+osxup() {
   rvm get stable && gem update;
   brew update && brew upgrade;
 }
