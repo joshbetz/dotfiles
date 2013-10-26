@@ -25,3 +25,5 @@ defaults write com.apple.menuextra.battery ShowTime -string "NO"
 defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 # Disable press and hold keys in Sublime
 defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
+# Disable shadow on screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
