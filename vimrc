@@ -35,7 +35,8 @@ filetype plugin indent on     " required!
 " =====================================================
 
 syntax on
-colorscheme Tomorrow-Night
+colorscheme solarized
+set background=dark
 set t_Co=256
 
 set mouse=a
