@@ -46,10 +46,11 @@ ln -s $DIR/shellrc ~/.bashrc
 # Setup VIM
 # =====================================
 dotfiles_backup vimrc
-dotfiles_install vimrc
+ln -sf $DIR/vimrc ~/.vimrc.fork
+ln -sf $DIR/vimrc.bundles ~/.vimrc.bundles.fork
 
 dotfiles_backup gvimrc
-dotfiles_install gvimrc
+ln -sf $DIR/gvimrc ~/.gvimrc.local
 
 dotfiles_backup_shallow vim
 dotfiles_install vim
