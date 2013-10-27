@@ -105,4 +105,4 @@ fi
 # Setup Vagrant
 # =====================================
 mkdir -p ~/.vagrant.d/
-ln -s $DIR/Vagrantfile ~/.vagrant.d/Vagrantfile
+ln -sf $DIR/Vagrantfile ~/.vagrant.d/Vagrantfile
