@@ -54,9 +54,8 @@ dotfiles_install gvimrc
 dotfiles_backup_shallow vim
 dotfiles_install vim
 
-# Run Vundle
-vim +BundleInstall! +BundleClean +qall
-
+# Run spf13 installer
+sh <(curl https://j.mp/spf13-vim3 -L)
 
 # =====================================
 # Setup git
