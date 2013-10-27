@@ -10,8 +10,9 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
-
+Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'AutoClose'
 
 if (has("python") || has("python3"))
 	Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
