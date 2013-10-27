@@ -45,8 +45,6 @@ shopt -s checkwinsize
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
     alias ll='ls --format=vertical --color=auto -lah'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
 case "$TERM" in
 xterm*|rxvt*)
