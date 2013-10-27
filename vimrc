@@ -20,3 +20,6 @@ set nofoldenable " Disable folding
 let NERDTreeQuitOnOpen = 0
 nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+
+" Auto resize splits
+autocmd VimResized * wincmd =
