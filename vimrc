@@ -15,7 +15,9 @@ set tabstop=4
 set softtabstop=4
 set noexpandtab
 
-set nofoldenable " Disable folding
+set nofoldenable                " disable code folding
+set foldlevel=100               " disable code folding
+let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
 let NERDTreeQuitOnOpen = 0
 nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
