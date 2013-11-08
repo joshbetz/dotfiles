@@ -9,8 +9,8 @@ startup_message off
 vbell off
  
 # Configures status bar at the bottom of the screen
-hardstatus alwayslastline
-hardstatus string "%-w%{= BW} %n %t %{-}%+w"
+hardstatus on
+hardstatus alwayslastline "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= @%H - %l - %LD %d %LM - %c"
  
 # Bumps up the size of the scrollback buffer
 defscrollback 20000
