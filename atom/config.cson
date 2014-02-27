@@ -1,0 +1,33 @@
+'exception-reporting':
+  'userId': '8119539e-c446-142a-5cf3-2d2da74ee0b3'
+'release-notes':
+  'viewedVersion': '0.60.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '0cdf6133937792814c5dc1188eb591325358aa68'
+'editor':
+  'fontSize': 16
+  'fontFamily': 'Inconsolata'
+  'showInvisibles': true
+  'softTabs': false
+  'tabLength': 4
+  'showIndentGuide': true
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'base16-tomorrow-dark-theme'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'projectHome': '/Users/josh/src'
+'tree-view': {}
+'spell-check':
+  'grammars': [
+    'source.gfm'
+    'text.git-commit'
+    'text.plain'
+  ]
