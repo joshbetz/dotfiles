@@ -1,3 +1,6 @@
+# Wrap git automatically
+eval "$(hub alias -s)"
+
 alias g='git'
 alias ga='git add'
 alias gap='ga -p'
