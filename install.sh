@@ -43,6 +43,12 @@ ln -s $DIR/shellrc ~/.bashrc
 
 
 # =====================================
+# Setup Atom
+# =====================================
+dotfiles_install atom
+
+
+# =====================================
 # Setup VIM
 # =====================================
 dotfiles_backup vimrc
@@ -92,14 +98,6 @@ dotfiles_install tmux.conf
 dotfiles_backup_shallow gemrc
 dotfiles_install gemrc
 
-
-# =====================================
-# Setup Sublime
-# =====================================
-if [[ `uname -s` == "Darwin" ]]; then
-	rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3
-	ln -s $DIR/Sublime\ Text\ 3 ~/Library/Application\ Support/
-fi
 
 # =====================================
 # Setup Vagrant
