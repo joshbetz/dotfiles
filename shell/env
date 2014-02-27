@@ -10,8 +10,12 @@ export PATH="$PATH:/usr/local/heroku/bin"
 ### Added npm to PATH for executables
 export PATH="$PATH:/usr/local/share/npm/bin"
 
-### Add local composer packages to path
-export PATH="$PATH:vendor/bin"
+### Add local and global composer packages to path
+export PATH="$PATH:vendor/bin:$HOME/.composer/vendor/bin/"
 
 ### Add Packer to PATH
 export PATH="$PATH:/usr/local/packer"
+
+# Go path
+export GOPATH=$HOME/src/go
+export PATH="$PATH:$GOPATH/bin"
