@@ -1,9 +1,0 @@
-Cache
-Index
-Local
-*.cache
-*.last-run
-Default*
-Packages
-!*.sublime-settings
-*.sublime-package
