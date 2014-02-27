@@ -23,6 +23,20 @@
     '.DS_Store'
   ]
   'projectHome': '/Users/josh/src'
+  'disabledPackages': [
+    'archive-view'
+    'autocomplete'
+    'autosave'
+    'background-tips'
+    'dev-live-reload'
+    'exception-reporting'
+    'feedback'
+    'image-view'
+    'keybinding-resolver'
+    'markdown-preview'
+    'metrics'
+    'welcome'
+  ]
 'tree-view': {}
 'spell-check':
   'grammars': [
@@ -30,3 +44,5 @@
     'text.git-commit'
     'text.plain'
   ]
+'whitespace':
+  'removeTrailingWhitespace': false
