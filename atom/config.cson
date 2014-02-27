@@ -12,7 +12,6 @@
   'showInvisibles': true
   'softTabs': false
   'tabLength': 4
-  'showIndentGuide': true
 'core':
   'themes': [
     'atom-dark-ui'
