@@ -11,7 +11,7 @@ export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 
 ### Add local and global composer packages to path
-export PATH="$PATH:vendor/bin:$HOME/.composer/vendor/bin/"
+export PATH="$PATH:vendor/bin:$HOME/.composer/vendor/bin"
 
 ### Add Packer to PATH
 export PATH="$PATH:/usr/local/packer"
