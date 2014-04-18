@@ -1,4 +1,4 @@
-set guifont=Inconsolata\ for\ Powerline:h14
+set guifont=Inconsolata:h14
 
 " Remove unecessary application chrome
 set guioptions-=T " Removes top toolbara
