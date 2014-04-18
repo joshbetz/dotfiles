@@ -4,6 +4,8 @@ alias gitd='gd $argv'
 alias svns='svn stat --ignore-externals'
 alias svnd='svn diff $argv | colordiff | less -R'
 
+alias rmexec='find . -type f -not -iwholename *svn* -exec svn propdel svn:executable {} \;'
+
 function s() {
 	if is_git_repo; then
 		gits $@
