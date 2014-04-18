@@ -7,6 +7,14 @@ UnBundle 'Shougo/neocomplcache'
 UnBundle 'Shougo/neosnippet'
 UnBundle 'honza/vim-snippets'
 
+" Formatting
+set nowrap
+set autoindent
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set noexpandtab
+
 set nofoldenable                " disable code folding
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
