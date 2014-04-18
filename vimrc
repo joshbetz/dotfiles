@@ -19,7 +19,6 @@ set nofoldenable                " disable code folding
 set foldlevel=100               " disable code folding
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
-set nolist
 let g:indent_guides_enable_on_vim_startup = 0
 
 let g:spf13_keep_trailing_whitespace = 1
