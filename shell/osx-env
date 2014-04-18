@@ -1,2 +1,5 @@
 export EDITOR="mvim"
 export VISUAL="vim"
+
+# Wrap git automatically
+eval "$(hub alias -s)"
