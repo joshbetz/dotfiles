@@ -16,7 +16,6 @@ set softtabstop=4
 set noexpandtab
 
 set nofoldenable                " disable code folding
-set foldlevel=100               " disable code folding
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
 let g:indent_guides_enable_on_vim_startup = 0
