@@ -20,3 +20,11 @@ nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
 
 " Auto resize splits
 autocmd VimResized * wincmd =
+
+" Scroll with up/down arrow keys
+map <Up> <c-u>
+map <Down> <c-d>
+
+" Switch splits with left/right arrow keys
+map <Right> <c-w>l
+map <Left> <c-w>h
