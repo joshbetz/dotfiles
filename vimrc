@@ -7,6 +7,8 @@ UnBundle 'Shougo/neocomplcache'
 UnBundle 'Shougo/neosnippet'
 UnBundle 'honza/vim-snippets'
 
+colorscheme Tomorrow-Night
+
 " Formatting
 set nowrap
 set autoindent
