@@ -43,12 +43,6 @@ ln -s $DIR/shellrc ~/.bashrc
 
 
 # =====================================
-# Setup Atom
-# =====================================
-dotfiles_install atom
-
-
-# =====================================
 # Setup VIM
 # =====================================
 dotfiles_backup vimrc
@@ -64,43 +58,9 @@ dotfiles_install vim
 # Run spf13 installer
 sh <(curl https://j.mp/spf13-vim3 -L)
 
+
 # =====================================
 # Setup git
 # =====================================
 dotfiles_install gitconfig
 dotfiles_install gitignore
-
-
-# =====================================
-# Setup ack
-# =====================================
-dotfiles_backup_shallow ackrc
-dotfiles_install ackrc
-
-
-# =====================================
-# Setup screen
-# =====================================
-dotfiles_backup screenrc
-dotfiles_install screenrc
-
-
-# =====================================
-# Setup tmux
-# =====================================
-dotfiles_backup_shallow tmux.conf
-dotfiles_install tmux.conf
-
-
-# =====================================
-# Setup ruby
-# =====================================
-dotfiles_backup_shallow gemrc
-dotfiles_install gemrc
-
-
-# =====================================
-# Setup Vagrant
-# =====================================
-mkdir -p ~/.vagrant.d/
-ln -sf $DIR/Vagrantfile ~/.vagrant.d/Vagrantfile
