@@ -56,7 +56,7 @@ dotfiles_backup_shallow vim
 dotfiles_install vim
 
 # Run spf13 installer
-sh <(curl https://j.mp/spf13-vim3 -L)
+curl http://j.mp/spf13-vim3 -L -o - | sh
 
 
 # =====================================
