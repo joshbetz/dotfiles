@@ -46,17 +46,14 @@ ln -s $DIR/shellrc ~/.bashrc
 # Setup VIM
 # =====================================
 dotfiles_backup vimrc
-ln -sf $DIR/vimrc ~/.vimrc.fork
-ln -sf $DIR/vimrc.bundles ~/.vimrc.bundles.fork
-
+dotfiles_install vimrc
 dotfiles_backup gvimrc
-ln -sf $DIR/gvimrc ~/.gvimrc.local
-
-dotfiles_backup_shallow vim
+dotfiles_install gvimrc
 dotfiles_install vim
 
-# Run spf13 installer
-curl http://j.mp/spf13-vim3 -L -o - | sh
+# Run vundle installer
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 
 # =====================================

@@ -1,15 +1,36 @@
-" General Programming
-UnBundle 'scrooloose/nerdcommenter'
-UnBundle 'godlygeek/tabular'
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Snippets & AutoComplete
-UnBundle 'Shougo/neocomplcache'
-UnBundle 'Shougo/neosnippet'
-UnBundle 'honza/vim-snippets'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-colorscheme Tomorrow-Night
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+set mouse=a
+set mousehide
+scriptencoding utf-8
+
+" Colors
+syntax enable
+colorscheme Tomorrow-Night-Eighties
+
+" Line numbers
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " Formatting
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 set nowrap
 set autoindent
 set shiftwidth=4
@@ -17,16 +38,30 @@ set tabstop=4
 set softtabstop=4
 set noexpandtab
 
-set nofoldenable                " disable code folding
-let g:DisableAutoPHPFolding = 1 " disable PIV's folding
+set viewoptions=folds,options,cursor,unix,slash
+set spell
+set hidden
+set showmatch
+set incsearch
+set hlsearch
+set ignorecase
+set backspace=2
 
-let g:indent_guides_enable_on_vim_startup = 0
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
 
-let g:spf13_keep_trailing_whitespace = 1
+" Shortcuts
+let mapleader = ','
 
-let NERDTreeQuitOnOpen = 0
+" NERDTree Config
+let NERDTreeMouseMode=2
 nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+
+" vim-airline
+set laststatus=2
+let g:airline_left_sep='›'
+let g:airline_right_sep='‹'
 
 " Auto resize splits
 autocmd VimResized * wincmd =
