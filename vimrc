@@ -8,9 +8,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+
+" Editor
 Plugin 'bling/vim-airline'
+
+" Syntax
+Plugin 'puppetlabs/puppet-syntax-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
