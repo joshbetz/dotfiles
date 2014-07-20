@@ -47,6 +47,9 @@ set hlsearch
 set ignorecase
 set backspace=2
 
+" No swap files
+set noswapfile
+
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
