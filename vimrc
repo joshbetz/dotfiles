@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 " Editor
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-sleuth'
 
 " Syntax
 Plugin 'puppetlabs/puppet-syntax-vim'
