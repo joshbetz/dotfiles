@@ -47,7 +47,6 @@ set softtabstop=4
 set noexpandtab
 
 set viewoptions=folds,options,cursor,unix,slash
-set spell
 set hidden
 set showmatch
 set incsearch
