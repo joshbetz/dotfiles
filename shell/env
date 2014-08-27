@@ -1,3 +1,6 @@
+# Source autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
 # Add my bin directory to the path
 export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
 
