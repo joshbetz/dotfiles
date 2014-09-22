@@ -83,3 +83,5 @@ map <Down> <c-f>
 " Switch splits with left/right arrow keys
 map <Right> <c-w>l
 map <Left> <c-w>h
+map <c-h> <c-w>h
+map <c-l> <c-w>l
