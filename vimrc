@@ -57,6 +57,9 @@ set backspace=2
 " No swap files
 set noswapfile
 
+" Auto filetype
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
