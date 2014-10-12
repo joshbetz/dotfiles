@@ -19,6 +19,7 @@ Plugin 'tpope/vim-sleuth'
 
 " Syntax
 Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
