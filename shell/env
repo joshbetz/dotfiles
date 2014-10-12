@@ -20,6 +20,6 @@ export PATH="$PATH:vendor/bin:$HOME/.composer/vendor/bin"
 ### Add Packer to PATH
 export PATH="$PATH:/usr/local/packer"
 
-# Go path
-export GOPATH=$HOME/src/go
+### Add Go workspace to PATH
+export GOPATH="$HOME/src/go"
 export PATH="$PATH:$GOPATH/bin"
