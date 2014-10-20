@@ -20,12 +20,6 @@ dotfiles_backup() {
 	fi
 }
 
-dotfiles_backup_shallow() {
-	FILE=$1
-	rm -rf ~/.$FILE.bak
-	[ -e ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.bak
-}
-
 # =====================================
 # Setup ZSH
 # =====================================
