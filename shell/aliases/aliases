@@ -149,9 +149,3 @@ function extract() {
 }
 
 alias x=extract
-
-alias makepot='php ~/bin/makepot/makepot.php'
-themepot() {
-	makepot wp-theme $1
-	mv *.pot $1/languages/
-}
