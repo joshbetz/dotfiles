@@ -111,3 +111,7 @@ map <Right> <c-w>l
 map <Left> <c-w>h
 map <c-h> <c-w>h
 map <c-l> <c-w>l
+
+" Conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
+nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
