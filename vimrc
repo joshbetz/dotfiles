@@ -88,8 +88,8 @@ let g:airline_right_sep='‹'
 autocmd VimResized * wincmd =
 
 " Scroll with up/down arrow keys
-map <Up> <c-b>
-map <Down> <c-f>
+map <Up> 2<C-e>
+map <Down> 2<C-y>
 
 " Switch splits with left/right arrow keys
 map <Right> <c-w>l
