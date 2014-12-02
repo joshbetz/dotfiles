@@ -25,8 +25,6 @@ Plugin 'fatih/vim-go'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-set mouse=a
-set mousehide
 scriptencoding utf-8
 
 " Colors
@@ -37,6 +35,11 @@ colorscheme Tomorrow-Night-Eighties
 set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+" OS Interaction
+set mouse=a
+set mousehide
+set clipboard=unnamed
 
 " Formatting
 set list
