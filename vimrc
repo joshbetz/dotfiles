@@ -88,6 +88,10 @@ let g:airline_right_sep='‹'
 " Auto resize splits
 autocmd VimResized * wincmd =
 
+" I never use ; anyway
+nnoremap ; :
+nnoremap <leader>; ;
+
 " Scroll with up/down arrow keys
 map <Up> 2<C-e>
 map <Down> 2<C-y>
