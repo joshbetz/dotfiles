@@ -88,6 +88,10 @@ let g:airline_right_sep='‹'
 " Auto resize splits
 autocmd VimResized * wincmd =
 
+" Shortcuts
+nnoremap <leader>Q :q<CR>    " Quickly close the current window
+nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
+
 " I never use ; anyway
 nnoremap ; :
 nnoremap <leader>; ;
