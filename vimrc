@@ -51,6 +51,10 @@ set nowrap
 set viewoptions=folds,options,cursor,unix,slash
 set hidden
 set backspace=2
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+autocmd VimResized * wincmd = " Auto resize splits
 
 
 " Search
@@ -66,6 +70,8 @@ vnoremap / /\v
 set nobackup
 set noswapfile
 set autoread
+au FocusLost * :wa " Auto save on lost focus
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Auto filetype
 
 
 " Shortcuts
@@ -102,20 +108,6 @@ map <c-l> <c-w>l
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
 
-
-" Relative line numbers
-set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
-" Auto filetype
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Auto resize splits
-autocmd VimResized * wincmd =
-
-" Autosave on lost focus
-au FocusLost * :wa
 
 
 " NERDTree Config
