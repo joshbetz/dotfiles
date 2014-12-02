@@ -27,19 +27,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 scriptencoding utf-8
 
-" Colors
-syntax enable
-colorscheme Tomorrow-Night-Eighties
-
-" Relative line numbers
-set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
 
 " OS Interaction
 set mouse=a
 set mousehide
 set clipboard=unnamed
+
 
 " Formatting
 set list
@@ -51,42 +44,35 @@ set tabstop=4
 set softtabstop=4
 set noexpandtab
 
+
+" Editor
+syntax enable
+colorscheme Tomorrow-Night-Eighties
 set viewoptions=folds,options,cursor,unix,slash
 set hidden
+set backspace=2
+
+
+" Search
 set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-set backspace=2
 nnoremap / /\v
 vnoremap / /\v
+
 
 " Files
 set nobackup
 set noswapfile
 set autoread
 
-" Auto filetype
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null
 
 " Shortcuts
 let mapleader = ','
 
-" NERDTree Config
-let NERDTreeMouseMode=2
-nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
-nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
-
-" vim-airline
-set laststatus=2
-let g:airline_left_sep='›'
-let g:airline_right_sep='‹'
-
-" Auto resize splits
-autocmd VimResized * wincmd =
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
 
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
@@ -94,9 +80,9 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 " Strip all trailing whitespace from a file, using ,W
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Shortcuts
-nnoremap <leader>Q :q<CR>    " Quickly close the current window
-nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
+" Quickly close current window or buffer
+nnoremap <leader>Q :q<CR>
+nnoremap <leader>q :bd<CR>
 
 " I never use ; anyway
 nnoremap ; :
@@ -115,3 +101,26 @@ map <c-l> <c-w>l
 " Conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
+
+
+" Relative line numbers
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" Auto filetype
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Auto resize splits
+autocmd VimResized * wincmd =
+
+
+" NERDTree Config
+let NERDTreeMouseMode=2
+nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
+nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+
+" vim-airline
+set laststatus=2
+let g:airline_left_sep='›'
+let g:airline_right_sep='‹'
