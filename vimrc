@@ -35,9 +35,6 @@ set clipboard=unnamed
 
 
 " Formatting
-set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-set nowrap
 set autoindent
 set shiftwidth=4
 set tabstop=4
@@ -48,6 +45,9 @@ set noexpandtab
 " Editor
 syntax enable
 colorscheme Tomorrow-Night-Eighties
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set nowrap
 set viewoptions=folds,options,cursor,unix,slash
 set hidden
 set backspace=2
