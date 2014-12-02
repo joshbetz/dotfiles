@@ -62,6 +62,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 " Files
+set nobackup
 set noswapfile
 set autoread
 
