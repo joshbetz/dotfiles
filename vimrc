@@ -33,7 +33,7 @@ scriptencoding utf-8
 syntax enable
 colorscheme Tomorrow-Night-Eighties
 
-" Line numbers
+" Relative line numbers
 set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
@@ -91,6 +91,6 @@ map <Left> <c-w>h
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
-"make < > shifts keep selection
+" make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
