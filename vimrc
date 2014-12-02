@@ -56,8 +56,9 @@ set hlsearch
 set ignorecase
 set backspace=2
 
-" No swap files
+" Files
 set noswapfile
+set autoread
 
 " Auto filetype
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
