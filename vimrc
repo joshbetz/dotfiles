@@ -114,6 +114,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Auto resize splits
 autocmd VimResized * wincmd =
 
+" Autosave on lost focus
+au FocusLost * :wa
+
 
 " NERDTree Config
 let NERDTreeMouseMode=2
