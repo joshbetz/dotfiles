@@ -86,10 +86,6 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 " Strip all trailing whitespace from a file, using ,W
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Quickly close current window or buffer
-nnoremap <leader>Q :q<CR>
-nnoremap <leader>q :bd<CR>
-
 " I never use ; anyway
 nnoremap ; :
 nnoremap <leader>; ;
