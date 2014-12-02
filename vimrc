@@ -58,6 +58,8 @@ set incsearch
 set hlsearch
 set ignorecase
 set backspace=2
+nnoremap / /\v
+vnoremap / /\v
 
 " Files
 set noswapfile
