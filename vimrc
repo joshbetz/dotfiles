@@ -88,6 +88,9 @@ let g:airline_right_sep='‹'
 " Auto resize splits
 autocmd VimResized * wincmd =
 
+" make p in Visual mode replace the selected text with the yank register
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+
 " Shortcuts
 nnoremap <leader>Q :q<CR>    " Quickly close the current window
 nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
