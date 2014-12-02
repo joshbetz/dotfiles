@@ -91,8 +91,8 @@ nnoremap ; :
 nnoremap <leader>; ;
 
 " Scroll with up/down arrow keys
-map <Up> 2<C-e>
-map <Down> 2<C-y>
+map <Up> 2<C-y>
+map <Down> 2<C-e>
 
 " Switch splits with left/right arrow keys
 map <Right> <c-w>l
