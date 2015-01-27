@@ -70,7 +70,7 @@ vnoremap / /\v
 set nobackup
 set noswapfile
 set autoread
-au FocusLost * :wa " Auto save on lost focus
+au FocusLost * silent! :wa " Auto save on lost focus
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Auto filetype
 
 
