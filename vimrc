@@ -31,7 +31,6 @@ scriptencoding utf-8
 " OS Interaction
 set mouse=a
 set mousehide
-set clipboard=unnamed
 
 
 " Formatting
