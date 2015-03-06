@@ -6,22 +6,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Bundle 'gmarik/Vundle.vim'
 
 " Filesystem
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
 
 " Editor
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-sleuth'
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-sleuth'
 
 " Syntax
 Bundle "scrooloose/syntastic"
-Plugin 'puppetlabs/puppet-syntax-vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'fatih/vim-go'
+Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
