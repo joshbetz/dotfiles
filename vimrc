@@ -18,6 +18,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-sleuth'
 
 " Syntax
+Bundle "scrooloose/syntastic"
 Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'fatih/vim-go'
@@ -114,3 +115,10 @@ nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
 set laststatus=2
 let g:airline_left_sep='›'
 let g:airline_right_sep='‹'
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['jshint']
