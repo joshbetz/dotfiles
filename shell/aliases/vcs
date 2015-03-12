@@ -1,16 +1,11 @@
 alias gits='git status -sb $argv; return 0'
 alias gitd='gd $argv'
 
-alias svns='svn stat --ignore-externals'
-alias svnd='svn diff $argv | colordiff | less -R'
-
-alias rmexec='find . -type f -not -iwholename *svn* -exec svn propdel svn:executable {} \;'
-
 function s() {
 	if is_git_repo; then
 		gits $@
 	elif is_svn_repo; then
-		svns $@
+		svn stat --ignore-externals
 	fi
 }
 
@@ -18,14 +13,9 @@ function d() {
 	if is_git_repo; then
 		gitd $@
 	elif is_svn_repo; then
-		svnd $@
+		svn diff $@ | colordiff | less -R
 	fi
 }
 
-function is_git_repo {
-	git branch > /dev/null 2>&1
-}
-
-function is_svn_repo {
-	test -d .svn
-}
+is_git_repo() { git branch > /dev/null 2>&1 }
+is_svn_repo() { test -d .svn }
