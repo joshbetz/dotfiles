@@ -212,8 +212,8 @@ function d() {
 }
 
 is_git_repo() {
-	git rev-parse --git-dir 2> /dev/null
+	git rev-parse --git-dir &> /dev/null
 }
 is_svn_repo() {
-	svn info > /dev/null
+	svn info &> /dev/null
 }
