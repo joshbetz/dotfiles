@@ -149,3 +149,67 @@ function extract() {
 }
 
 alias x=extract
+alias v='vagrant'
+alias vup='vagrant up'
+alias vd='vagrant destroy'
+alias vs='vagrant status'
+
+# Git
+alias g='git'
+alias ga='git add'
+alias gap='ga -p'
+alias gau='git add -u'
+alias gbr='git branch -v'
+alias gc='git commit -v'
+alias gca='gc -a'
+alias gcam='gca --amend'
+alias gch='git cherry-pick'
+alias gcm='git commit -v --amend'
+alias gco='git checkout'
+alias gcop='gco -p'
+alias gd='git diff -M --color'
+alias gdc='git diff --cached -M'
+alias gf='git fetch'
+alias glog='git log --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias gl='glog --graph'
+alias gla='gl --all'
+alias gm='git merge --no-ff'
+alias gmf='git merge --ff-only'
+alias gms='git merge --squash'
+alias gp='git push'
+alias gpt='gp --tags'
+alias gr='git reset'
+alias grb='git rebase -p'
+alias grbc='git rebase --continue'
+alias grbi='git rebase -i'
+alias grh='git reset --hard'
+alias grp='gr --patch'
+alias grsh='git reset --soft HEAD~'
+alias grv='git remote -v'
+alias gs='git status -sb'
+gup() {
+	git stash
+	git pull --rebase=preserve
+	git stash pop
+}
+alias gits='git status -sb $argv; return 0'
+alias gitd='gd $argv'
+
+function s() {
+	if is_git_repo; then
+		gits $@
+	elif is_svn_repo; then
+		svn stat --ignore-externals
+	fi
+}
+
+function d() {
+	if is_git_repo; then
+		gitd $@
+	elif is_svn_repo; then
+		svn diff $@ | colordiff | less -R
+	fi
+}
+
+is_git_repo() { git branch > /dev/null 2>&1 }
+is_svn_repo() { test -d .svn }

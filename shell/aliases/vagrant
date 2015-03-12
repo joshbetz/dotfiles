@@ -1,4 +1,0 @@
-alias v='vagrant'
-alias vup='vagrant up'
-alias vd='vagrant destroy'
-alias vs='vagrant status'
