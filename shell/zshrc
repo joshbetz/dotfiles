@@ -1,4 +1,3 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -7,35 +6,28 @@ setopt append_history
 setopt inc_append_history
 setopt autocd
 bindkey -e
-# End of lines configured by zsh-newuser-install
 
 autoload -Uz compinit
 compinit
 setopt complete_in_word
-# End of lines added by compinstall
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 export WORDCHARS='*?[]~=&;!#$%^(){}'
 
-# mappings for Ctrl/Option-left-arrow and Ctrl/Option-right-arrow for word moving
-bindkey "\e\e[C"  forward-word
-bindkey "\e\e[D"  backward-word
-
-bindkey '^' self-insert-backslash
-function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
-zle -N self-insert-backslash
-
-setopt prompt_subst
 setopt hist_ignore_dups
+setopt prompt_subst
+ppwd() {echo $PWD | sed "s:^$HOME:~:"}
+precmd() { vcs_info }
 
-project_pwd() {
-  echo $PWD | sed "s:^$HOME:~:"
-}
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' get-revision true
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats '%b@%8.8i %u'
+zstyle ':vcs_info:svn*:*' formats '%b@%i'
+zstyle ':vcs_info:*' actionformats '%b@%i (%a)'
+zstyle ':vcs_info:*' branchformat '%b'
+zstyle ':vcs_info:*' unstagedstr '⚡'
+zstyle ':vcs_info:*' enable svn git
 
-precmd () {print -Pn "\e]2; %~/ \a"}
-preexec () {print -Pn "\e]2; %~/ \a"}
-
-export PROMPT=$'%{\e[0;26m%}%n@%M%{\e[0m%}:$(project_pwd)
+export PROMPT=$'%n@%M%:$(ppwd)
 %{\e[0;%(?.32.31)m%}$%{\e[0m%} '
-export RPROMPT=$'%{\e[0;26m%}$(git_cwd_info)%{\e[0m%}'
+export RPROMPT='$(vcs_info && echo $vcs_info_msg_0_)'
