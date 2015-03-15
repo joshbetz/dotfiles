@@ -1,2 +1,1 @@
-alias ls='ls --color=auto'
 alias du='du -k --max-depth=1 $argv'

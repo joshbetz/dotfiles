@@ -23,11 +23,10 @@ bacon() {
 wiki() { dig +short txt $1.wp.dg.cx; }
 
 # ls aliases
-alias l='ls'
-alias ll='ls -lh'
-alias la='ls -a'
-alias lal='ls -lah'
-alias lla='lal'
+alias l='ls -G'
+alias ll='l -lh'
+alias la='l -a'
+alias lla='ll -a'
 
 # Show history
 alias history='fc -l 1'
