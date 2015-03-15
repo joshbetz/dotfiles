@@ -46,8 +46,6 @@ ssh-copy-id() {
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 
-alias du='du -k -d 1 $argv'
-
 alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "window.location.reload()" in front document''
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
