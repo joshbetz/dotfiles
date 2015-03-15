@@ -2,21 +2,6 @@
 alias cleandesk='chflags hidden ~/Desktop/*'
 alias nocleandesk='chflags nohidden ~/Desktop/*'
 
-osxup() {
-  rvm get stable && gem update;
-  brew update && brew upgrade;
-}
-
-# VMs
-vm() {
-	nohup /Applications/VirtualBox.app/Contents/MacOS/VBoxHeadless -startvm $1 > /dev/null 2>&1&
-}
-
-# Sleep timer
-sleeptime() {
-  sleep $1; osascript -e 'tell application "System Events" to sleep'
-}
-
 # ssh-copy-id for the mac
 ssh-copy-id() {
 	USER=$(whoami)
@@ -43,11 +28,6 @@ ssh-copy-id() {
 	cat $FILE | ssh $1 "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
 }
 
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
-
-alias reload_webkit='osascript -e 'tell application "WebKit" to do JavaScript "window.location.reload()" in front document''
-
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
@@ -57,10 +37,6 @@ o() {
   then open .
   else open $@
   fi
-}
-
-function woman() {
-  man -t "$@" | open -f -a Preview
 }
 
 function trash() {
