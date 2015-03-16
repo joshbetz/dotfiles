@@ -6,12 +6,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # =====================================
 # Installation Helpers
 # =====================================
-dotfiles_install() {
-	FILE=$1
-	rm -rf ~/.$FILE
-	ln -s $DIR/$FILE ~/.$FILE
-}
-
 dotfiles_backup() {
 	FILE=$1
 	if ! [ -h ~/.$FILE ]; then
@@ -19,6 +13,14 @@ dotfiles_backup() {
 		[ -e ~/.$FILE ] && mv ~/.$FILE ~/.$FILE.local
 	fi
 }
+
+dotfiles_install() {
+	FILE=$1
+	dotfiles_backup $FILE
+	rm -rf ~/.$FILE
+	ln -s $DIR/$FILE ~/.$FILE
+}
+
 
 # =====================================
 # Setup ZSH
@@ -39,9 +41,7 @@ ln -s $DIR/shellrc ~/.bashrc
 # =====================================
 # Setup VIM
 # =====================================
-dotfiles_backup vimrc
 dotfiles_install vimrc
-dotfiles_backup gvimrc
 dotfiles_install gvimrc
 dotfiles_install vim
 
