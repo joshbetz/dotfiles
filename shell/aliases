@@ -53,7 +53,6 @@ take() { mkdir $1 && cd $1; }
 cd() { builtin cd "$@" && ls; }
 alias cd.='cd ~/bin/dotfiles'
 alias cdw='cd ~/src/vip-quickstart'
-alias src='cd ~/src'
 
 bd() {
   OLDPWD=`pwd`
