@@ -1,4 +1,4 @@
-alias password='date +%s | shasum -a 256 | base64 | head -c 64; echo'
+alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
 
 # Resources
 alias tu='top -o cpu' # cpu
