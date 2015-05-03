@@ -1,26 +1,7 @@
 alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
 
-# Resources
-alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
-alias df='df -kh $argv'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias whois="whois -h whois-servers.net"
-
-bacon() {
-  PARAGRAPHS=1
-  if [[ ! -z "$1" ]]; then
-    PARAGRAPHS="$1"
-  fi
-
-  curl "http://baconipsum.com/api/?type=meat-and-filler&paras=$PARAGRAPHS"
-}
-
-# Wikipedia
-wiki() { dig +short txt $1.wp.dg.cx; }
 
 # ls aliases
 alias l='ls -G'
@@ -35,18 +16,6 @@ alias history='fc -l 1'
 alias ack='ack --pager="less -FRX"'
 a() { ack --before-context=10 "$*"; }
 af() { a "function &?$*"; }
-afc() { af "$*\("; }
-c() { ack --before-context=10 --ignore-dir=wp-content "$*" ~/src/wordpress/; }
-cf() { c "function &?$*"; }
-
-# Screen Aliases
-alias sc="screen -d -R -U"
-
-# Laravel Artisan
-alias artisan='php artisan $@ --env=local'
-
-# Grunt
-alias gw='grunt && grunt watch'
 
 # CD Aliases
 take() { mkdir $1 && cd $1; }
@@ -146,11 +115,14 @@ function extract() {
   done
 }
 
-alias x=extract
+alias x='extract'
+
+# Vagrant aliases
 alias v='vagrant'
 alias vup='vagrant up'
 alias vd='vagrant destroy'
 alias vs='vagrant status'
+alias vdf='vagrant destroy --force'
 
 # Git
 alias g='git'
