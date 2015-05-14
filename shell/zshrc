@@ -28,6 +28,6 @@ zstyle ':vcs_info:*' branchformat '%b'
 zstyle ':vcs_info:*' unstagedstr '⚡'
 zstyle ':vcs_info:*' enable svn git
 
-export PROMPT=$'%n@%M%:$(ppwd)
+export PROMPT=$'%n@%M:$(ppwd)
 %{\e[0;%(?.32.31)m%}$%{\e[0m%} '
 export RPROMPT='$(vcs_info && echo $vcs_info_msg_0_)'
