@@ -18,7 +18,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-sleuth'
 
 " Syntax
-Bundle "scrooloose/syntastic"
+Bundle 'Shutnik/jshint2.vim'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'fatih/vim-go'
@@ -116,9 +116,8 @@ set laststatus=2
 let g:airline_left_sep='›'
 let g:airline_right_sep='‹'
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
+" JSHint
+let jshint2_read = 1
+let jshint2_save = 1
+let jshint2_height = 3
+let jshint2_height = 8
