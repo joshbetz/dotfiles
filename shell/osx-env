@@ -3,3 +3,6 @@ export VISUAL="vim"
 
 # Wrap git automatically
 eval "$(hub alias -s)"
+
+# Gopath from Homebrew
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
