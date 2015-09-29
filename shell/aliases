@@ -161,6 +161,7 @@ alias gs='git status -sb'
 gup() {
 	git stash
 	git pull --rebase=preserve
+	git submodule update --init --recursive
 	git stash pop
 }
 
