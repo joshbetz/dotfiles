@@ -15,12 +15,9 @@ Bundle 'kien/ctrlp.vim'
 " Editor
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-sleuth'
 
 " Syntax
-Bundle 'Shutnik/jshint2.vim'
 Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'tpope/vim-markdown'
 Bundle 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
@@ -103,8 +100,6 @@ map <c-l> <c-w>l
 " Conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
-
-
 
 " NERDTree Config
 let NERDTreeMouseMode=2
