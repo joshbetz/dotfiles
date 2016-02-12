@@ -1,4 +1,5 @@
 alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
+alias vi='vim'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
