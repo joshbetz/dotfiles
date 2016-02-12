@@ -119,10 +119,13 @@ alias x='extract'
 
 # Vagrant aliases
 alias v='vagrant'
-alias vup='vagrant up'
+alias vrp='vr && vp'
 alias vd='vagrant destroy'
-alias vs='vagrant status'
 alias vdf='vagrant destroy --force'
+alias vp='vagrant provision'
+alias vr='vagrant rsync'
+alias vs='vagrant status'
+alias vup='vagrant up'
 
 # Git
 alias g='git'
