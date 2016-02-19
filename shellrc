@@ -31,7 +31,6 @@ fi
 SHELLFILES_HOST=`hostname | awk -F. '{ print $(NF-1)"."$NF }' | sed 's/\.local$//'`
 
 dotfile_load ${SHELLFILES_SHELL}rc
-load ~/.${SHELLFILES_SHELL}rc.local
 
 dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
@@ -42,3 +41,5 @@ dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load ${SHELLFILES_OS}-aliases
 dotfile_load ${SHELLFILES_HOST}-aliases
 dotfile_load aliases
+
+load ~/.${SHELLFILES_SHELL}rc.local
