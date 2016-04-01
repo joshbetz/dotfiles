@@ -1,7 +1,7 @@
 alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
 alias vi='vim'
 
-alias colectivo='while true; do curl -X POST http://192.168.0.1:8000 --data "accept=\'I have read and agree to everything below.\'"; sleep 900; done'
+alias colectivo='while true; do curl -X POST http://192.168.0.1:8000 --data "accept=1"; sleep 900; done'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
