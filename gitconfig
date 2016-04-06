@@ -2,6 +2,8 @@
 	name = Josh Betz
 	email = j@joshbetz.com
 	signingkey = A98F8096
+[commit]
+	gpgsign = true
 [github]
 	user = joshbetz
 [alias]
