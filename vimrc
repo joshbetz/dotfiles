@@ -71,6 +71,8 @@ set autoread
 au FocusLost * silent! :wa " Auto save on lost focus
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Auto filetype
 
+" Filesystem
+set wildmode=longest,list
 
 " Shortcuts
 let mapleader = ','
