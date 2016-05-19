@@ -122,3 +122,6 @@ let jshint2_height = 8
 
 " Control P
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Gitgutter
+autocmd FocusGained * call gitgutter#all()
