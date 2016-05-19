@@ -4,6 +4,10 @@ export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
 
+# Load NVM if it's installed
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
 ### Added by the Heroku Toolbelt
 export PATH="$PATH:/usr/local/heroku/bin"
 
