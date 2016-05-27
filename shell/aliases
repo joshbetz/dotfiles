@@ -17,11 +17,6 @@ alias lla='ll -a'
 # Show history
 alias history='fc -l 1'
 
-# Ack Aliases
-alias ack='ag --pager="less -FRX"'
-a() { ack --before-context=10 "$*"; }
-af() { a "function &?$*"; }
-
 # CD Aliases
 take() { mkdir $1 && cd $1; }
 cd() { builtin cd "$@" && ls; }
