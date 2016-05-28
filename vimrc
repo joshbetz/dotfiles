@@ -114,12 +114,6 @@ set laststatus=2
 let g:airline_left_sep='›'
 let g:airline_right_sep='‹'
 
-" JSHint
-let jshint2_read = 1
-let jshint2_save = 1
-let jshint2_height = 3
-let jshint2_height = 8
-
 " Control P
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
