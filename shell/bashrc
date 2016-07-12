@@ -1,6 +1,3 @@
-# Turn on autocd
-shopt -s autocd
-
 # If not running interactively, don't do anything:
 [ -z "$PS1" ] && return
 shopt -s checkwinsize

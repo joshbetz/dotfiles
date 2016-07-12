@@ -8,7 +8,7 @@ eval "$(hub alias -s)"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Set Apple Terminal.app resume directory
-if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
 	function chpwd {
 		local SEARCH=' '
 		local REPLACE='%20'
@@ -17,4 +17,4 @@ if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]] {
 	}
 
 	chpwd
-}
+fi
