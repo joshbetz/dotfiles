@@ -37,6 +37,11 @@ dotfiles_backup bashrc
 rm -f ~/.bashrc
 ln -s $DIR/shellrc ~/.bashrc
 
+# =====================================
+# Setup Hyperterm
+# =====================================
+dotfiles_install hyperterm.js
+
 
 # =====================================
 # Setup VIM
