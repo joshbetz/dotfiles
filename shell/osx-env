@@ -1,4 +1,4 @@
-export EDITOR="mvim"
+export EDITOR="vim"
 export VISUAL="vim"
 
 # Wrap git automatically
