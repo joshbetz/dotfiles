@@ -53,6 +53,7 @@ set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 autocmd VimResized * wincmd = " Auto resize splits
+au FocusGained * :redraw!
 
 
 " Search
