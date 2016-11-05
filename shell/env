@@ -20,3 +20,6 @@ export PATH="$PATH:/usr/local/packer"
 ### Add Go workspace to PATH
 export GOPATH="$HOME/src/go"
 export PATH="$PATH:$GOPATH/bin"
+
+### Set TTY for GPG
+export GPG_TTY=$(tty)
