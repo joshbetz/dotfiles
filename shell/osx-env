@@ -4,6 +4,9 @@ export VISUAL="vim"
 # Wrap git automatically
 eval "$(hub alias -s)"
 
+# Source autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 # Gopath from Homebrew
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
