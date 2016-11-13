@@ -9,7 +9,8 @@ alias colectivo='while true; do curl -X POST http://192.168.0.1:8000 --data "acc
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # ls aliases
-alias l='ls -G'
+alias ls='ls -G'
+alias l='ls -1'
 alias ll='l -lh'
 alias la='l -a'
 alias lla='ll -a'
