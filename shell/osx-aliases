@@ -1,4 +1,11 @@
-# dash
+pb() {
+	if [ -t 0 ]; then
+		pbpaste
+	else
+		pbcopy
+	fi
+}
+
 dash() {
 	open "dash://$@"
 }
