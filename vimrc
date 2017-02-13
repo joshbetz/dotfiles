@@ -112,8 +112,6 @@ nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
 
 " vim-airline
 set laststatus=2
-let g:airline_left_sep='›'
-let g:airline_right_sep='‹'
 
 " Control P
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
