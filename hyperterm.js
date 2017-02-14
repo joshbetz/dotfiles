@@ -8,6 +8,8 @@ module.exports = {
 		// font family with optional fallbacks
 		fontFamily: 'Inconsolata, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
+		cursorShape: 'BEAM',
+
 		// some color overrides. see http://bit.ly/29k1iU2 for
 		// the full list
 		colors: [
