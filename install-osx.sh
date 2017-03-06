@@ -1,7 +1,12 @@
+#!/bin/bash
+
+# Get current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew install pt autojump colordiff hub zsh
+brew upgrade
+brew install $(cat $DIR/brewlist)
 
 # Make ⌘ + F focus the search input in iTunes
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
