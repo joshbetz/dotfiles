@@ -4,9 +4,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew upgrade
-brew install $(cat $DIR/brewlist)
+for package in $(cat $DIR/brewlist); do
+	if ! brew ls --version $package > /dev/null; then
+		brew install $package
+	fi
+done
+for cask in $(cat $DIR/casklist); do
+	if ! brew cask ls --versions $cask > /dev/null; then
+		brew cask install $cask
+	fi
+done
 
 # Make ⌘ + F focus the search input in iTunes
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
