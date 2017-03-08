@@ -21,7 +21,7 @@ alias history='fc -l 1'
 # CD Aliases
 take() { mkdir $1 && cd $1; }
 cd() { builtin cd "$@" && ls; }
-alias cd.='cd ~/bin/dotfiles'
+alias cd.='cd ~/.josh'
 
 alias e='$EDITOR'
 alias e.='$EDITOR ~/bin/dotfiles'

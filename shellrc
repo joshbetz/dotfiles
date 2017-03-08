@@ -1,5 +1,5 @@
 if [ -z "$DOTFILES" ]; then
-    DOTFILES="$HOME/bin/dotfiles"
+    DOTFILES="$HOME/.josh"
 fi
 
 if [ -z "$SHELLFILES" ]; then
