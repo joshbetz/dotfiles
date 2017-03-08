@@ -31,9 +31,5 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Hide remaining battery time and percentage
-defaults write com.apple.menuextra.battery ShowTime -string "NO"
-defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-
 # Disable shadow on screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
