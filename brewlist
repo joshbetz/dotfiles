@@ -1,10 +1,15 @@
 autojump
 colordiff
-composer
+gdb
+git
 go
 gpg
+gpg-agent
+httpie
 hub
+jq
 node
-php70
 pt
+vim
+xz
 zsh
