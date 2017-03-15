@@ -18,6 +18,7 @@ Bundle 'airblade/vim-gitgutter'
 
 " Syntax
 Bundle 'vim-syntastic/syntastic'
+Bundle 'mtscout6/syntastic-local-eslint.vim'
 Bundle 'fatih/vim-go'
 Bundle 'pangloss/vim-javascript'
 
