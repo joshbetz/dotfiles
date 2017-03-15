@@ -17,7 +17,7 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 
 " Syntax
-Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'vim-syntastic/syntastic'
 Bundle 'fatih/vim-go'
 Bundle 'pangloss/vim-javascript'
 
@@ -118,3 +118,14 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 " Gitgutter
 autocmd FocusGained * call gitgutter#all()
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
