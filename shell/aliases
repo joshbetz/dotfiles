@@ -71,6 +71,7 @@ alias grp='gr --patch'
 alias grsh='git reset --soft HEAD~'
 alias grv='git remote -v'
 alias gs='git status -sb'
+alias gsup='git submodule update --remote --merge'
 gup() {
 	git stash
 	git pull --rebase=preserve
