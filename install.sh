@@ -10,6 +10,10 @@ ln -sfnv $DIR/shellrc ~/.bashrc
 # Hyperterm
 ln -sfnv $DIR/hyperterm.js ~/.hyperterm.js
 
+# GPG
+mkdir -p ~/.gnupg
+ln -sfnv $DIR/gnupg ~/.gnupg/gpg.conf
+
 # Vim
 ln -sfnv $DIR/vim ~/.vim
 ln -sfnv $DIR/vimrc ~/.vimrc
