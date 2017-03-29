@@ -8,10 +8,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Bundle 'gmarik/Vundle.vim'
 
-" Filesystem
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-
 " Editor
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
@@ -106,16 +102,8 @@ map <c-l> <c-w>l
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
 
-" NERDTree Config
-let NERDTreeMouseMode=2
-nnoremap <Leader>e :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
-nnoremap <Leader>E :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
-
 " vim-airline
 set laststatus=2
-
-" Control P
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Gitgutter
 autocmd FocusGained * call gitgutter#all()
