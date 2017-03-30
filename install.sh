@@ -12,7 +12,8 @@ ln -sfnv $DIR/hyperterm.js ~/.hyperterm.js
 
 # GPG
 mkdir -p ~/.gnupg
-ln -sfnv $DIR/gnupg ~/.gnupg/gpg.conf
+ln -sfnv $DIR/gnupg/gpg.conf ~/.gnupg/gpg.conf
+ln -sfnv $DIR/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 # Vim
 ln -sfnv $DIR/vim ~/.vim
