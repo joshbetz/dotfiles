@@ -25,7 +25,3 @@ vim +PluginInstall +qall
 # Git
 ln -sfnv $DIR/gitconfig ~/.gitconfig
 ln -sfnv $DIR/gitignore ~/.gitignore
-
-if [[ `uname -s` == "Darwin" ]]; then
-	$DIR/install-osx.sh
-fi
