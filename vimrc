@@ -71,6 +71,10 @@ set autoread
 au FocusLost * silent! :wa " Auto save on lost focus
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Auto filetype
 
+" Spell check
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+
 " Filesystem
 set wildmode=longest,list
 
