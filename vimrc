@@ -11,12 +11,14 @@ Bundle 'gmarik/Vundle.vim'
 " Editor
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'junegunn/goyo.vim'
 
 " Syntax
 Bundle 'vim-syntastic/syntastic'
 Bundle 'mtscout6/syntastic-local-eslint.vim'
 Bundle 'fatih/vim-go'
 Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,6 +109,30 @@ set laststatus=2
 
 " Gitgutter
 autocmd FocusGained * call gitgutter#all()
+
+" vim-markdown
+let g:markdown_fenced_languages = ['javascript', 'go', 'php']
+
+" Goyo
+function! s:auto_goyo()
+	if &ft == 'markdown' && winnr('$') == 1
+		Goyo 80
+	elseif exists('#goyo')
+		Goyo!
+	endif
+endfunction
+
+function! s:goyo_leave()
+	if winnr('$') < 2
+		silent! :q
+	endif
+endfunction
+
+augroup goyo_markdown
+	autocmd!
+	autocmd BufNewFile,BufRead * call s:auto_goyo()
+	autocmd! User GoyoLeave nested call <SID>goyo_leave()
+augroup END
 
 " Syntastic
 set statusline+=%#warningmsg#
