@@ -10,4 +10,23 @@ xterm*|rxvt*)
     ;;
 esac
 
-export PS1='\[\033[01;33m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+# checks if branch has something pending
+function parse_git_dirty() {
+	git diff --quiet --ignore-submodules HEAD 2>/dev/null; [ $? -eq 1 ] && echo "*"
+}
+
+# gets the current git branch
+function parse_git_branch() {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
+# get last commit hash prepended with @ (i.e. @8a323d0)
+function parse_git_hash() {
+	git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/@\1/"
+}
+
+function git_prompt() {
+	[ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1 && echo " ($(parse_git_branch)$(parse_git_hash)) "
+}
+
+export PS1='\[\033[01;33m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(git_prompt)\n\$ '
