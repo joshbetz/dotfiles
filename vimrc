@@ -12,6 +12,7 @@ Bundle 'gmarik/Vundle.vim'
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'junegunn/goyo.vim'
+Bundle 'kien/ctrlp.vim.git'
 
 " Syntax
 Bundle 'joshdick/onedark.vim'
@@ -90,6 +91,14 @@ set autoread
 au FocusLost * silent! :wa " Auto save on lost focus
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown " Auto filetype
 
+" Tabs
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+inoremap <C-t> <esc>:tabnew<CR>
+inoremap <C-h> <esc>:tabprevious<CR>
+inoremap <C-l> <esc>:tabnext<CR>
+
 " Spell check
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
@@ -120,12 +129,13 @@ map <Down> 2<C-e>
 " Switch splits with left/right arrow keys
 map <Right> <c-w>l
 map <Left> <c-w>h
-map <c-h> <c-w>h
-map <c-l> <c-w>l
 
 " Conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
+
+" ctrlp
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " vim-airline
 set laststatus=2

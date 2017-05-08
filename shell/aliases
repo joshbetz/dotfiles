@@ -1,6 +1,6 @@
 alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
 
-alias vim='vim -O'
+alias vim='vim -p'
 alias vi='vim'
 
 alias colectivo='while true; do curl -X POST http://192.168.0.1:8000 --data "accept=1"; sleep 900; done'
