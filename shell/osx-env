@@ -4,9 +4,6 @@ export VISUAL="vim"
 # Load ssh keys automatically
 ssh-add -A 2>/dev/null
 
-# Wrap git automatically
-eval "$(hub alias -s)"
-
 # Source autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
