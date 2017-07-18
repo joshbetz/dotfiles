@@ -26,16 +26,6 @@ alias cd.='cd ~/.josh'
 alias e='$EDITOR'
 alias e.='$EDITOR ~/bin/dotfiles'
 
-# Vagrant aliases
-alias v='vagrant'
-alias vrp='vr && vp'
-alias vd='vagrant destroy'
-alias vdf='vagrant destroy --force'
-alias vp='vagrant provision'
-alias vr='vagrant rsync'
-alias vs='vagrant status'
-alias vup='vagrant up'
-
 # Git
 alias g='git'
 alias ga='git add'
