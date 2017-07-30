@@ -13,6 +13,7 @@ Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'junegunn/goyo.vim'
 Bundle 'kien/ctrlp.vim.git'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Syntax
 Bundle 'joshdick/onedark.vim'
