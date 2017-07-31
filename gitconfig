@@ -1,7 +1,7 @@
 [user]
 	name = Josh Betz
 	email = j@joshbetz.com
-	signingkey = A98F8096
+	signingkey = AC4E73C45A7E9080
 [github]
 	user = joshbetz
 [alias]
@@ -17,3 +17,5 @@
 	helper = osxkeychain
 [tag]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
