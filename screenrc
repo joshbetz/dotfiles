@@ -11,5 +11,13 @@ term screen-256color
 # I know about screen
 startup_message off
 
+# Previous output is not overwritten when using tools like 'less'
+altscreen on
+
+# Defines CTRL-z as the escape combination instead of CTRL-a which is
+# useful to go to the beginning of a line
+# The original CTRL-z binding is accessible through 'CTRL-z + a'.
+escape ^za
+
 # Escape is C-z
 escape ^zz
