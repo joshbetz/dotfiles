@@ -52,4 +52,5 @@ zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' formats '%b@%8.8i %u'
 zstyle ':vcs_info:svn*' formats '%b@%i'
 
-RPROMPT="%F{242}$(vcs_info && echo $vcs_info_msg_0_)%f"
+setopt PROMPT_SUBST
+RPROMPT='%F{242}$(vcs_info && echo $vcs_info_msg_0_)%f'
