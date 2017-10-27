@@ -1,33 +1,55 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
-setopt extendedglob notify
-setopt append_history
-setopt inc_append_history
-setopt autocd
+
+setopt APPEND_HISTORY INC_APPEND_HISTORY HIST_IGNORE_DUPS
+setopt EXTENDED_GLOB
+
+# emacs mode
 bindkey -e
 
+# tab completion
 autoload -Uz compinit
-compinit
-setopt complete_in_word
+setopt COMPLETE_IN_WORD
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 export WORDCHARS='*?[]~=&;!#$%^(){}'
 
-setopt hist_ignore_dups
-setopt prompt_subst
-ppwd() {echo $PWD | sed "s:^$HOME:~:"}
-precmd() { vcs_info }
+# ========
+# PROMPT
+# ========
+
+local -a preprompt
+preprompt+=('%F{blue}%~%f')
+
+# show username@host if logged in through SSH
+[[ "$SSH_CONNECTION" != '' && $UID -gt 0 ]] && preprompt+=('%F{242}%n@%m%f')
+
+# show username@host if root, with username in red
+[[ $UID -eq 0 ]] && preprompt+=('%F{red}%n%f%F{242}@%m%f')
+
+local -ah ps1
+ps1=(
+	$'\n%{\r%}'
+	${(j. .)preprompt}
+	$'\n%{\r%}'
+	'%(?.%F{green}.%F{red})$%f '
+)
+
+PROMPT="${(j..)ps1}"
+
+# ========
+# RPROMPT
+# ========
 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' formats '%b@%8.8i %u'
-zstyle ':vcs_info:svn*:*' formats '%b@%i'
+zstyle ':vcs_info:*' enable svn git
 zstyle ':vcs_info:*' actionformats '%b@%i (%a)'
 zstyle ':vcs_info:*' branchformat '%b'
-zstyle ':vcs_info:*' unstagedstr '⚡'
-zstyle ':vcs_info:*' enable svn git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' get-revision true
+zstyle ':vcs_info:*' unstagedstr '*'
 
-export PROMPT=$'%n@%M:$(ppwd)
-%{\e[0;%(?.32.31)m%}$%{\e[0m%} '
-export RPROMPT='$(vcs_info && echo $vcs_info_msg_0_)'
+zstyle ':vcs_info:*' formats '%b@%8.8i %u'
+zstyle ':vcs_info:svn*' formats '%b@%i'
+
+RPROMPT="%F{242}$(vcs_info && echo $vcs_info_msg_0_)%f"
