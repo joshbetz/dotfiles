@@ -21,11 +21,17 @@ export WORDCHARS='*?[]~=&;!#$%^(){}'
 local -a preprompt
 preprompt+=('%F{blue}%~%f')
 
-# show username@host if logged in through SSH
-[[ "$SSH_CONNECTION" != '' && $UID -gt 0 ]] && preprompt+=('%F{242}%n@%m%f')
 
-# show username@host if root, with username in red
-[[ $UID -eq 0 ]] && preprompt+=('%F{red}%n%f%F{242}@%m%f')
+if [[ $UID -eq 0 ]]; then
+
+	# show username@host if root, with username in red
+	preprompt+=('%F{red}%n%f%F{242}@%m%f')
+elif [[ "$SSH_CONNECTION" != '' ]]; then
+
+	# show username@host if logged in through SSH
+	preprompt+=('%F{242}%n@%m%f')
+fi
+
 
 local -ah ps1
 ps1=(
