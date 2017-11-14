@@ -70,6 +70,7 @@ set viewoptions=folds,options,cursor,unix,slash
 set hidden
 set backspace=2
 set relativenumber
+set noshowmode
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 autocmd VimResized * wincmd = " Auto resize splits
@@ -80,7 +81,10 @@ au FocusGained * :redraw!
 set showmatch
 set incsearch
 set hlsearch
-set ignorecase
+set ignorecase  " ignore the case
+set smartcase   " but not when the search pattern contains uppercase
+set ttyfast
+set lazyredraw
 nnoremap / /\v
 vnoremap / /\v
 
