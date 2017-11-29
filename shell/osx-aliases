@@ -6,10 +6,6 @@ pb() {
 	fi
 }
 
-dash() {
-	open "dash://$@"
-}
-
 # ssh-copy-id for the mac
 ssh-copy-id() {
 	USER=$(whoami)
