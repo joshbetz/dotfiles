@@ -24,6 +24,10 @@ alias cd.='cd ~/.josh'
 alias e='$EDITOR'
 alias e.='$EDITOR ~/bin/dotfiles'
 
+# File search
+alias pt='pt --color --group'
+alias less='less -FRX'
+
 # Git
 alias g='git'
 alias ga='git add'
