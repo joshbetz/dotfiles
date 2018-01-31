@@ -1,6 +1,6 @@
 alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
 
-alias vim='vim -p'
+alias vim='vim -O'
 alias vi='vim'
 
 # IP addresses
