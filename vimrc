@@ -6,22 +6,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " Editor
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'junegunn/goyo.vim'
-Bundle 'kien/ctrlp.vim.git'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/goyo.vim'
+Plugin 'kien/ctrlp.vim.git'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Syntax
-Bundle 'joshdick/onedark.vim'
-Bundle 'vim-syntastic/syntastic'
-Bundle 'mtscout6/syntastic-local-eslint.vim'
-Bundle 'fatih/vim-go'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
+Plugin 'joshdick/onedark.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
