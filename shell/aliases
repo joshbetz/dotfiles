@@ -7,8 +7,7 @@ v() {
 		vim $@
 	fi
 }
-alias vi=v
-alias vim=v
+alias vi=vim
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
