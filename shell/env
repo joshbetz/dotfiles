@@ -1,5 +1,5 @@
 # Wrap git automatically
-eval "$(hub alias -s)"
+which hub > /dev/null && eval "$(hub alias -s)"
 
 # Add my bin directory to the path
 export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
