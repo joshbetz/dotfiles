@@ -6,6 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Shell
 ln -sfnv $DIR/shellrc ~/.zshrc
 ln -sfnv $DIR/shellrc ~/.bashrc
+source $DIR/shellrc
 
 # Hyperterm
 ln -sfnv $DIR/hyperterm.js ~/.hyperterm.js
