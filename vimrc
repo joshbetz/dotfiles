@@ -14,6 +14,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'flowtype/vim-flow'
 
 " Syntax
 Plugin 'joshdick/onedark.vim'
