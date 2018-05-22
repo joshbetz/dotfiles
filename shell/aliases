@@ -39,6 +39,13 @@ alias g='git'
 alias ga='git add'
 alias gap='ga -p'
 alias gau='git add -u'
+gbi() {
+	git bisect start
+	git bisect bad
+	git checkout HEAD~10
+	git bisect good
+	git bisect run "$@"
+}
 alias gbr='git branch -v'
 alias gc='git commit -v'
 alias gca='gc -a'
