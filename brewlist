@@ -1,11 +1,16 @@
 autojump
 colordiff
 git
+gnupg
 go
+hopenpgp-tools
 hub
 jq
 node
+pinentry-mac
 pt
 vim
 xz
+ykman
+yubikey-personalization
 zsh
