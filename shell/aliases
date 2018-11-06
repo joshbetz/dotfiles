@@ -1,4 +1,4 @@
-alias password='openssl rand -base64 45 | tr -d /=+ | cut -c -30'
+alias password='base64 /dev/urandom | head -c 64'
 
 v() {
 	if [[ $# -gt 1 ]]; then
