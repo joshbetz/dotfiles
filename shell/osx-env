@@ -5,7 +5,7 @@ export VISUAL="vim"
 ssh-add -A 2>/dev/null
 
 # Source autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -f /usr/local/bin/brew ]] && [[ -s $(/usr/local/bin/brew --prefix)/etc/profile.d/autojump.sh ]] && . $(/usr/local/bin/brew --prefix)/etc/profile.d/autojump.sh
 
 # Gopath from Homebrew
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
