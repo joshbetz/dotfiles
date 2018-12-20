@@ -5,17 +5,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install homebrew
 which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
 brew upgrade
-for package in $(cat $DIR/brewlist); do
-	if ! brew ls --version $package > /dev/null; then
-		brew install $package
-	fi
-done
-for cask in $(cat $DIR/casklist); do
-	if ! brew cask ls --versions $cask > /dev/null; then
-		brew cask install $cask
-	fi
-done
+brew cleanup
+cat $DIR/brewlist | xargs -n1 brew install
+cat $DIR/casklist | xargs -n1 brew cask install
 
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
