@@ -21,7 +21,7 @@ ln -sfnv $DIR/vim ~/.vim
 ln -sfnv $DIR/vimrc ~/.vimrc
 ln -sfnv $DIR/gvimrc ~/.gvimrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+vim +PluginInstall +PluginClean! +qall
 
 # Git
 ln -sfnv $DIR/gitconfig ~/.gitconfig
