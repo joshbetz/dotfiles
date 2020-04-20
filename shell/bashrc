@@ -29,4 +29,12 @@ function git_prompt() {
 	[ -d .git ] || git rev-parse --git-dir > /dev/null 2>&1 && echo " ($(parse_git_branch)$(parse_git_hash)) "
 }
 
-export PS1='\[\033[01;33m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(git_prompt)\n\$ '
+export PS1='\[\033[01;34m\]\w\[\033[00m\]$(git_prompt)\n'
+
+if [[ $UID -eq 0 ]]; then
+	export PS1="$PS1\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;35m\]\H\[\033[00m\]"
+elif [[ "$SSH_CONNECTION" != '' ]]; then
+	export PS1="$PS1\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;35m\]\H\[\033[00m\]"
+fi
+
+export PS1="$PS1\$ "
