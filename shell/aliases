@@ -79,7 +79,7 @@ alias gs='git status -sb'
 alias gsup='git submodule update --remote --merge'
 gup() {
 	git stash
-	git pull --rebase=preserve
+	git pull --rebase=merges
 	git submodule update --init --recursive
 	git stash pop
 }
