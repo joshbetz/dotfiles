@@ -15,6 +15,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'flowtype/vim-flow'
+Plugin 'leafgarland/typescript-vim'
 
 " Syntax
 Plugin 'joshdick/onedark.vim'
@@ -61,6 +62,9 @@ endif
 syntax enable
 colorscheme onedark
 let g:airline_theme='onedark'
+
+" Use new regular expression engine
+set re=0
 
 " Editor
 set scrolloff=3
