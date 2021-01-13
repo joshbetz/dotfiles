@@ -1,5 +1,11 @@
 alias password='base64 /dev/urandom | head -c 64'
 
+if which nvim > /dev/null; then
+	alias vi=nvim
+else
+	alias vi=vim
+fi
+
 v() {
 	if [[ $# -gt 1 ]]; then
 		vim -p $@;
@@ -7,7 +13,6 @@ v() {
 		vim $@
 	fi
 }
-alias vi=vim
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
