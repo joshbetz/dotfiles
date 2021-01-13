@@ -39,6 +39,16 @@ alias e.='$EDITOR ~/bin/dotfiles'
 alias pt='pt --color --group'
 alias less='less -FRX'
 
+# gpg
+secret () {
+	output=~/"${1}".$(date +%s).enc
+	gpg --encrypt --armor --output ${output} -r 0xA48474C1A09D8C23 "${1}" && echo "${1} -> ${output}"
+}
+reveal () {
+	output=$(echo "${1}" | rev | cut -c16- | rev)
+	gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}"
+}
+
 # Git
 alias g='git'
 alias ga='git add'
