@@ -17,10 +17,11 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'flowtype/vim-flow'
 Plugin 'leafgarland/typescript-vim'
 
+" Lint
+Plugin 'w0rp/ale'
+
 " Syntax
 Plugin 'joshdick/onedark.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-markdown'
@@ -34,6 +35,12 @@ scriptencoding utf-8
 " OS Interaction
 set mouse=a
 set mousehide
+
+
+" Lint
+let g:ale_fixers = {}
+let g:ale_fixers.javascript = ['eslint']
+let g:ale_fix_on_save = 1
 
 
 " Formatting
@@ -180,27 +187,6 @@ augroup goyo_markdown
 	autocmd BufNewFile,BufRead * call s:auto_goyo()
 	autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup END
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
 
 " vim-go
 let go_def_mapping_enabled=0
