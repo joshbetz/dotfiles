@@ -17,11 +17,13 @@ ln -sfnv $DIR/gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -sfnv $DIR/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 # Vim
-ln -sfnv $DIR/vim ~/.vim
+mkdir -p ~/.config/nvim
+ln -sfnv $DIR/nvim ~/.config/nvim/init.vim
 ln -sfnv $DIR/vimrc ~/.vimrc
 ln -sfnv $DIR/gvimrc ~/.gvimrc
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginUpdate +PluginInstall! +PluginClean! +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -u NONE +PlugUpdate +PlugInstall! +PlugClean! +qall
 
 # Git
 ln -sfnv $DIR/gitconfig ~/.gitconfig
