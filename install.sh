@@ -31,3 +31,6 @@ ln -sfnv $DIR/gitignore ~/.gitignore
 
 # pt
 ln -sfnv $DIR/ptconfig.toml ~/.ptconfig.toml
+
+# screen
+cp $DIR/screenrc ~/.screenrc
