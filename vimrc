@@ -10,7 +10,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 " Lint
@@ -167,7 +167,9 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 autocmd BufWritePost * GitGutter
 
 " ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_use_caching = 100 " cache if > 100 files
+let g:ctrlp_max_depth = 10
 
 " vim-airline
 set laststatus=2
