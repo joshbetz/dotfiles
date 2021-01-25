@@ -28,3 +28,6 @@ vim -u NONE +PlugUpdate +PlugInstall! +PlugClean! +qall
 # Git
 ln -sfnv $DIR/gitconfig ~/.gitconfig
 ln -sfnv $DIR/gitignore ~/.gitignore
+
+# pt
+ln -sfnv $DIR/ptconfig.toml ~/.ptconfig.toml
