@@ -51,7 +51,9 @@ set noexpandtab
 ""
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.php = ['phpcbf']
 let g:ale_fix_on_save = 1
+command! ALEDisableFixers       let g:ale_fix_on_save=0
 
 ""
 " Editor
