@@ -21,3 +21,5 @@
 	program = /usr/local/bin/gpg
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
