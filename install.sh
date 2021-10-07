@@ -4,6 +4,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Shell
+mkdir -p ~/.config
+ln -sfnv $DIR/starship.toml ~/.config/starship.toml
 ln -sfnv $DIR/shellrc ~/.zshrc
 ln -sfnv $DIR/shellrc ~/.bashrc
 source $DIR/shellrc

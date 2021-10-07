@@ -18,6 +18,7 @@ node
 pinentry
 pinentry-mac
 rust
+starship
 subversion
 terraform
 the_platinum_searcher

@@ -1,0 +1,58 @@
+add_newline = true
+format = """$username$hostname$directory\n$character"""
+right_format = """
+$kubernetes\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$terraform\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$shell
+"""
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+truncate_to_repo = false
+truncation_length = 5
+truncation_symbol = "…/"
+
+[cmd_duration]
+format = "\\[took [$duration]($style)\\] "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_commit]
+only_detached = false
+
+[git_metrics]
+disabled = false
+format = "(\\[([+$added]($added_style)) ([-$deleted]($deleted_style))\\] )"
+
+[time]
+utc_time_offset = "0"
+
+[hostname]
+format = "([$hostname]($style)\n)"
+trim_at = ""
+
+[username]
+format = "([$user]($style)@)"
