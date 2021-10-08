@@ -3,8 +3,9 @@
 # Get current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Shell
 mkdir -p ~/.config
+
+# Shell
 ln -sfnv $DIR/starship.toml ~/.config/starship.toml
 ln -sfnv $DIR/shellrc ~/.zshrc
 ln -sfnv $DIR/shellrc ~/.bashrc
@@ -25,7 +26,7 @@ ln -sfnv $DIR/vimrc ~/.vimrc
 ln -sfnv $DIR/gvimrc ~/.gvimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -u NONE +PlugUpdate +PlugInstall! +PlugClean! +qall
+vim +PlugInstall! +PlugUpdate +PlugClean! +qall
 
 # Git
 ln -sfnv $DIR/gitconfig ~/.gitconfig
