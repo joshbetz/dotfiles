@@ -58,6 +58,7 @@ command! ALEDisableFixers       let g:ale_fix_on_save=0
 ""
 " Editor
 ""
+set encoding=utf8
 set scrolloff=3
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
