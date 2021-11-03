@@ -3,7 +3,7 @@ export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
 
 # Load NVM if it's installed
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  --no-use # This loads nvm
 
 ### Added npm to PATH for executables
 export PATH="$PATH:/usr/local/share/npm/bin"
