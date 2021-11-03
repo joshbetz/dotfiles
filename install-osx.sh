@@ -16,11 +16,18 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
+# Show path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Always search within folder
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
-# Avoid creating .DS_Store files on network volumes
+# Avoid creating .DS_Store files on network and USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Disable shadow on screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -32,9 +39,6 @@ defaults write com.apple.dock tilesize -int 32
 defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay 5
 
-# Show battery percentage in menu bar
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
 # Show the full URL in the address bar
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
@@ -45,6 +49,18 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# Expand save & print dialogs by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true && \
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Disable auto capitalization
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 killall Finder
 killall Dock
