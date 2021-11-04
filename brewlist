@@ -1,7 +1,6 @@
 autojump
 awscli
 colordiff
-dep
 gh
 git
 gnupg
@@ -10,11 +9,11 @@ go
 jq
 k6
 kubernetes-cli
-macvim
 minikube
 mysql-client
 neovim
 node
+php
 pinentry
 pinentry-mac
 rust
@@ -22,7 +21,6 @@ starship
 subversion
 terraform
 the_platinum_searcher
-wrk
 xz
 ykman
 ykpers
