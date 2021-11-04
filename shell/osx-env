@@ -1,6 +1,9 @@
 export EDITOR="vim"
 export VISUAL="vim"
 
+# Do the homebrew thing
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Load ssh keys automatically
 ssh-add -A 2>/dev/null
 
