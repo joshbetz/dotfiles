@@ -8,7 +8,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ssh-add -A 2>/dev/null
 
 # Source autojump
-[[ -f /usr/local/bin/brew ]] && [[ -s $(/usr/local/bin/brew --prefix)/etc/profile.d/autojump.sh ]] && . $(/usr/local/bin/brew --prefix)/etc/profile.d/autojump.sh
+[[ -f /opt/homebrew/bin/brew ]] && [[ -s $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh ]] && . $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh
 
 # Gopath from Homebrew
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
