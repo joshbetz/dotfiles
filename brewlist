@@ -13,6 +13,7 @@ minikube
 mysql-client
 neovim
 node
+nvm
 php
 pinentry
 pinentry-mac
