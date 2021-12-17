@@ -7,7 +7,7 @@
 [alias]
 	svn-diff = !git-svn-diff
 [core]
-	excludesfile = /Users/josh/.gitignore
+	excludesfile = ~/.gitignore
 [push]
 	default = current
 [filter "media"]
