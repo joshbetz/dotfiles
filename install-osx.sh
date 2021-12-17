@@ -12,6 +12,9 @@ brew cleanup
 cat $DIR/brewlist | xargs -n1 brew install
 cat $DIR/casklist | xargs -n1 brew install --cask
 
+# Show menu bar in full screen
+defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
+
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
