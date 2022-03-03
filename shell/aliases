@@ -93,10 +93,15 @@ alias grv='git remote -v'
 alias gs='git status -sb'
 alias gsup='git submodule update --remote --merge'
 gup() {
-	git stash
-	git pull --rebase=merges
-	git submodule update --init --recursive
-	git stash pop
+	if [[ $(git status --porcelain --untracked-files=no) ]]; then
+		git stash
+		git pull --rebase=merges
+		git submodule update --init --recursive
+		git stash pop
+	else
+		git pull --rebase=merges
+		git submodule update --init --recursive
+	fi
 }
 
 function s() {
