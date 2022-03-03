@@ -18,7 +18,9 @@ export PATH="$PATH:/usr/local/packer"
 export GOPATH="$HOME/src/go"
 export PATH="$PATH:$GOPATH/bin"
 
-### Set TTY for GPG
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent > /dev/null
+if [[ "$SSH_CONNECTION" == '' ]]; then
+	### Set TTY for GPG
+	export GPG_TTY="$(tty)"
+	export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+	gpgconf --launch gpg-agent > /dev/null
+fi
