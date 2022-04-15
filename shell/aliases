@@ -15,7 +15,7 @@ v() {
 }
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig +short txt ch whoami.cloudflare @1.0.0.1"
 
 # ls aliases
 alias ls='ls -G'
@@ -38,6 +38,8 @@ alias e.='$EDITOR ~/bin/dotfiles'
 # File search
 alias pt='pt --color --group'
 alias less='less -FRX'
+
+alias k='kubectl'
 
 # gpg
 secret () {
