@@ -35,7 +35,7 @@ truncation_length = 5
 truncation_symbol = "…/"
 
 [cmd_duration]
-format = "\\[took [$duration]($style)\\] "
+format = "[$duration]($style) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
@@ -58,13 +58,15 @@ trim_at = ""
 format = "([$user]($style)@)"
 
 [battery]
-charging_symbol = "🔋 "
+charging_symbol = "🔌 "
 discharging_symbol = "🪫  "
 
 [[battery.display]]
 threshold = 30
 style = "bold yellow"
+discharging_symbol = "🔋 "
 
 [[battery.display]]
 threshold = 10
 style = "bold red"
+discharging_symbol = "🪫  "
