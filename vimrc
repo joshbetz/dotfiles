@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-sleuth'
 
 " Lint
 Plug 'w0rp/ale'
