@@ -67,12 +67,15 @@ set nowrap
 set viewoptions=folds,options,cursor,unix,slash
 set hidden
 set backspace=2
-set relativenumber
 set noshowmode
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+set number
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
 autocmd VimResized * wincmd = " Auto resize splits
-au FocusGained * :redraw!
+autocmd FocusGained * :redraw!
 set t_RV=
 
 
