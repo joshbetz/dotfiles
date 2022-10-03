@@ -51,6 +51,10 @@ reveal () {
 	gpg --decrypt --output ${output} "${1}" && echo "${1} -> ${output}"
 }
 
+getcert() {
+	openssl s_client -connect $1:443 -servername $1 < /dev/null | openssl x509 -noout -text
+}
+
 # Git
 alias g='git'
 alias ga='git add'
