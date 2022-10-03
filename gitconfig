@@ -4,15 +4,10 @@
 	signingkey = 0xA48474C1A09D8C23
 [github]
 	user = joshbetz
-[alias]
-	svn-diff = !git-svn-diff
 [core]
 	excludesfile = ~/.gitignore
 [push]
 	default = current
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
 [tag]
