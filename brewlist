@@ -8,6 +8,7 @@ gnutls
 go
 jq
 k6
+k9s
 kubernetes-cli
 minikube
 mysql-client
