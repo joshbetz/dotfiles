@@ -70,3 +70,7 @@ discharging_symbol = "🔋 "
 threshold = 10
 style = "bold red"
 discharging_symbol = "🪫  "
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
