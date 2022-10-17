@@ -1,6 +1,7 @@
 add_newline = true
 format = """$username$hostname$directory\n$character"""
 right_format = """
+${custom.layer0}\
 $kubernetes\
 $git_branch\
 $git_commit\
@@ -74,3 +75,9 @@ discharging_symbol = "🪫  "
 [kubernetes]
 disabled = false
 format = '[$symbol$context( \($namespace\))]($style) '
+
+[custom.layer0]
+command = "layer0 profile current"
+symbol = "✯"
+format = "[$symbol ($output )]($style) "
+when = '[[ "$(layer0 profile current)" -ne "dev" ]]'
