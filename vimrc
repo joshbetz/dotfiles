@@ -14,6 +14,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
+Plug 'preservim/nerdtree'
 
 " Lint
 Plug 'w0rp/ale'
@@ -186,6 +187,12 @@ let g:markdown_fenced_languages = ['javascript', 'go', 'php']
 
 " vim-go
 let go_def_mapping_enabled=0
+
+" NERDTree
+let NERDTreeMouseMode=2
+nmap <leader>e :NERDTree<cr>
+autocmd VimEnter NERD_tree_1 enew | execute 'NERDTree '.argv()[0]
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 ""
