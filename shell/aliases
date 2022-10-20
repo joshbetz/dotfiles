@@ -1,16 +1,19 @@
 alias password='base64 /dev/urandom | head -c 64'
 
+# vim
 if which nvim > /dev/null; then
-	alias vi=nvim
-else
-	alias vi=vim
+	alias vim=nvim
 fi
+
+vi() {
+	vim ${@:-.}
+}
 
 v() {
 	if [[ $# -gt 1 ]]; then
-		vim -p $@;
+		vi -p $@
 	else
-		vim $@
+		vi $@
 	fi
 }
 
