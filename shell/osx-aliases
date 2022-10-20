@@ -9,7 +9,7 @@
 pb() {
 	if [ -t 0 ]; then
 		pbpaste
-	else
+	else if [ -t 1 ]; then
 		pbcopy
 	fi
 }
