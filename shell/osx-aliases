@@ -14,32 +14,6 @@ pb() {
 	fi
 }
 
-# ssh-copy-id for the mac
-ssh-copy-id() {
-	USER=$(whoami)
-	USAGE="Usage: `basename $0` [-i FILE] user@host"
-	FILE="$HOME/.ssh/id_rsa.pub"
-
-	if [ $# -lt 1 ]; then
-		echo "$USAGE"
-	fi
-
-
-	while getopts “i::” OPTION; do
-		case $OPTION in
-			i)
-				FILE=$OPTARG
-				;;
-			?)
-				echo "$USAGE"
-				;;
-		esac
-	done
-	shift $OPTIND-1
-
-	cat $FILE | ssh $1 "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys"
-}
-
 o() {
   if [ $ARGC -eq 0 ]
   then open .
