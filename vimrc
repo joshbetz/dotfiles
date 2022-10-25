@@ -20,11 +20,9 @@ Plug 'preservim/nerdtree'
 Plug 'w0rp/ale'
 
 " Language / Syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-markdown'
-Plug 'hashivim/vim-terraform'
 
 " Initialize plugin system
 call plug#end()
