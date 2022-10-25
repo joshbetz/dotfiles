@@ -1,11 +1,3 @@
-889() {
-	osascript -e 'tell application "Music"
-		open location "https://wyms.streamguys1.com/live?platform=88nine"
-		play
-		set visible of every window to false
-		end tell' > /dev/null
-}
-
 pb() {
 	if [ -t 0 ]; then
 		pbpaste

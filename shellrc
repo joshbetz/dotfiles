@@ -14,9 +14,7 @@ function dotfile_load() {
     [ -r $SHELLFILES/$1 ] && . $SHELLFILES/$1
 }
 
-if [[ "$SHELL" == "/usr/local/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
-    SHELLFILES_SHELL=zsh
-elif [[ "$SHELL" == "/bin/zsh" && "$0" != "bash" && $0 != "-bash" ]]; then
+if [[ "$SHELL" == *zsh* && "$0" != "bash" && "$0" != "-bash" ]]; then
     SHELLFILES_SHELL=zsh
 else
     SHELLFILES_SHELL=bash
@@ -32,14 +30,14 @@ SHELLFILES_HOST=`hostname | awk -F. '{ print $(NF-1)"."$NF }' | sed 's/\.local$/
 
 dotfile_load ${SHELLFILES_SHELL}rc
 
-dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load ${SHELLFILES_OS}-env
 dotfile_load ${SHELLFILES_HOST}-env
+dotfile_load ${SHELLFILES_SHELL}-env
 dotfile_load env
 
-dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load ${SHELLFILES_OS}-aliases
 dotfile_load ${SHELLFILES_HOST}-aliases
+dotfile_load ${SHELLFILES_SHELL}-aliases
 dotfile_load aliases
 
 load ~/.${SHELLFILES_SHELL}rc.local

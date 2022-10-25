@@ -24,5 +24,3 @@ if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then
 
 	chpwd
 fi
-
-eval $(starship init zsh)
