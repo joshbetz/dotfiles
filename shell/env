@@ -1,18 +1,8 @@
 # Add my bin directory to the path
-export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
+export PATH="/usr/local/bin:~/bin:$PATH"
 
 # Load NVM if it's installed
 export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"  --no-use # This loads nvm
-
-### Added npm to PATH for executables
-export PATH="$PATH:/usr/local/share/npm/bin"
-
-### Add local and global composer packages to path
-export PATH="$PATH:vendor/bin:$HOME/.composer/vendor/bin"
-
-### Add Packer to PATH
-export PATH="$PATH:/usr/local/packer"
 
 ### Add Go workspace to PATH
 export GOPATH="$HOME/src/go"
