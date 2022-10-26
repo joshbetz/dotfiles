@@ -2,7 +2,8 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 # Do the homebrew thing
-eval "$(/opt/homebrew/bin/brew shellenv)"
+brewprefix=$(brew --prefix)
+eval "$($brewprefix/Homebrew/bin/brew shellenv)"
 
 # Load ssh keys automatically
 ssh-add -A 2>/dev/null
@@ -11,7 +12,7 @@ ssh-add -A 2>/dev/null
 [[ -f /opt/homebrew/bin/brew ]] && [[ -s $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh ]] && . $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh
 
 # Gopath from Homebrew
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:"$brewprefix/opt/go/libexec/bin:$brewprefix/opt/mysql-client/bin"
 
 # Set Apple Terminal.app resume directory
 if [[ $TERM_PROGRAM == "Apple_Terminal" ]] && [[ -z "$INSIDE_EMACS" ]]; then

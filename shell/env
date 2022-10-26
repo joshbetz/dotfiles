@@ -3,7 +3,7 @@ export PATH=/usr/local/bin:$PATH:~/bin:vendor/bin:./bin
 
 # Load NVM if it's installed
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  --no-use # This loads nvm
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"  --no-use # This loads nvm
 
 ### Added npm to PATH for executables
 export PATH="$PATH:/usr/local/share/npm/bin"
@@ -22,5 +22,6 @@ if [[ "$SSH_CONNECTION" == '' ]]; then
 	### Set TTY for GPG
 	export GPG_TTY="$(tty)"
 	export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+	gpgconf --kill gpg-agent
 	gpgconf --launch gpg-agent > /dev/null
 fi
