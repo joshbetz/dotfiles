@@ -46,6 +46,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Set Dock size
 defaults write com.apple.dock tilesize -int 32
 
+# Hide recent apps in Dock
+defaults write com.apple.dock "show-recents" -bool "false"
+
 # Require password after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -bool true
 defaults write com.apple.screensaver askForPasswordDelay 5
