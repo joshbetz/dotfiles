@@ -16,6 +16,9 @@ brew cleanup
 cat $DIR/brewlist | xargs -n1 brew install
 cat $DIR/casklist | xargs -n1 brew install --cask
 
+# Install common Mac apps
+cat $DIR/applist | awk -F/ '{ print $7 }' | cut -c 3- | xargs -n1 mas install
+
 # Show menu bar in full screen
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
 

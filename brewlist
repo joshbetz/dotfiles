@@ -10,6 +10,7 @@ jq
 k6
 k9s
 kubernetes-cli
+mas
 minikube
 mysql-client
 neovim
