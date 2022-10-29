@@ -19,6 +19,10 @@ cat $DIR/casklist | xargs -n1 brew install --cask
 # Install common Mac apps
 cat $DIR/applist | awk -F/ '{ print $7 }' | cut -c 3- | xargs -n1 mas install
 
+# Download apps that aren't in the app store
+curl -so ~/Downloads/hyperkey.dmg https://hyperkey.app/downloads/Hyperkey0.22.dmg
+curl -so ~/Downloads/quitter.zip https://marco.org/appcasts/Quitter.zip
+
 # Show menu bar in full screen
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
 
