@@ -23,6 +23,9 @@ cat $DIR/applist | awk -F/ '{ print $7 }' | cut -c 3- | xargs -n1 mas install
 curl -so ~/Downloads/hyperkey.dmg https://hyperkey.app/downloads/Hyperkey0.22.dmg
 curl -so ~/Downloads/quitter.zip https://marco.org/appcasts/Quitter.zip
 
+# Set background color
+wallpaper set-solid-color 292C33
+
 # Show menu bar in full screen
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
 
