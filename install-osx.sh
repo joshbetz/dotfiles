@@ -83,5 +83,8 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # Disable smart quotes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
+# Remove items from trash after 30 days
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
 killall Finder
 killall Dock
