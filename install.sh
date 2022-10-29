@@ -37,3 +37,8 @@ ln -sfnv $DIR/ptconfig.toml ~/.ptconfig.toml
 
 # screen
 cp $DIR/screenrc ~/.screenrc
+
+# config npm
+npm config set audit=false --location user
+npm config set fund=false --location user
+npm config set loglevel=warn --location user
