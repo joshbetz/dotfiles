@@ -86,5 +86,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Remove items from trash after 30 days
 defaults write com.apple.finder FXRemoveOldTrashItems -bool true
 
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
 killall Finder
 killall Dock
