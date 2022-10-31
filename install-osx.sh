@@ -91,3 +91,7 @@ defaults write com.apple.commerce AutoUpdate -bool true
 
 killall Finder
 killall Dock
+
+# Add iOS & watch simulator to Applications
+ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
