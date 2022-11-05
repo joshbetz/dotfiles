@@ -25,6 +25,7 @@ curl -so ~/Downloads/quitter.zip https://marco.org/appcasts/Quitter.zip
 
 # Set background color
 wallpaper set-solid-color 292C33
+wallpaper set "${DIR}/apple.png" --scale center
 
 # Show menu bar in full screen
 defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
