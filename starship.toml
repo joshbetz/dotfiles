@@ -79,4 +79,4 @@ format = '[$symbol$context( \($namespace\))]($style) '
 command = "layer0 profile current"
 symbol = "✯"
 format = "[$symbol ($output )]($style) "
-when = '[[ "$(layer0 profile current)" -ne "dev" ]]'
+when = 'test "$(layer0 profile current)" != "dev"'
