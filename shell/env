@@ -1,5 +1,5 @@
 # Add my bin directory to the path
-export PATH="/usr/local/bin:~/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/bin:$PATH"
 
 # Load NVM if it's installed
 export NVM_DIR="$HOME/.nvm"
