@@ -1,3 +1,6 @@
 if which starship > /dev/null; then
 	eval $(starship init zsh)
 fi
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source ~/.josh/shell/zsh-plugins/zsh-autosuggestions.zsh
