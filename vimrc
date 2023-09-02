@@ -250,14 +250,19 @@ function! s:auto_goyo()
 	endif
 endfunction
 
+function! s:goyo_enter()
+        set wrap
+        set linebreak
+        set textwidth=0
+        set wrapmargin=0
+endfunction
+
 function! s:goyo_leave()
 	if winnr('$') < 2
 		silent! :q
 	endif
 endfunction
 
-augroup goyo_markdown
-	autocmd!
-	autocmd BufNewFile,BufRead * call s:auto_goyo()
-	autocmd! User GoyoLeave nested call <SID>goyo_leave()
-augroup END
+autocmd BufNewFile,BufRead * call s:auto_goyo()
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
