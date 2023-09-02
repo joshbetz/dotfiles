@@ -189,10 +189,10 @@ let go_def_mapping_enabled=0
 " fzf
 function! OpenInFreshWindowOrNewTab()
     if bufname('%') == '' && getbufvar('%', "&modified") == 0
-        Files
+        GFiles
     else
         tabnew
-        Files
+        GFiles
         " Close the new tab if the find was cancelled.
         if bufname('%') == ''
             tabclose
