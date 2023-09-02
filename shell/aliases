@@ -1,4 +1,4 @@
-alias password='base64 /dev/urandom | head -c 64'
+alias password='openssl rand -base64 64 | head -c 64'
 
 # vim
 if which nvim > /dev/null; then
