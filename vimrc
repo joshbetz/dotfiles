@@ -187,12 +187,13 @@ let g:markdown_fenced_languages = ['javascript', 'go', 'php']
 let go_def_mapping_enabled=0
 
 " fzf
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 function! OpenInFreshWindowOrNewTab()
     if bufname('%') == '' && getbufvar('%', "&modified") == 0
-        GFiles
+        Files
     else
         tabnew
-        GFiles
+        Files
         " Close the new tab if the find was cancelled.
         if bufname('%') == ''
             tabclose

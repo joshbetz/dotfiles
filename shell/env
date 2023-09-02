@@ -8,6 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 export GOPATH="$HOME/src/go"
 export PATH="$PATH:$GOPATH/bin"
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
 if [[ "$SSH_CONNECTION" == '' ]]; then
 	### Set TTY for GPG
 	export GPG_TTY="$(tty)"
