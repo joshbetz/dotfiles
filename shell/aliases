@@ -5,7 +5,7 @@ if which nvim > /dev/null; then
 	alias vim=nvim
 fi
 
-alias vf='vim $(fzf)'
+alias vf='vim -c "Files"'
 
 vi() {
 	vim $@
