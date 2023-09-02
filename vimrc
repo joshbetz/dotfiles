@@ -24,6 +24,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'tpope/vim-markdown'
 
+Plug 'github/copilot.vim'
+
 " Initialize plugin system
 call plug#end()
 
