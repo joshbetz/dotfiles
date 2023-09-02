@@ -5,6 +5,8 @@ if which nvim > /dev/null; then
 	alias vim=nvim
 fi
 
+alias vf='vim $(fzf)'
+
 vi() {
 	vim $@
 }
@@ -12,8 +14,10 @@ vi() {
 v() {
 	if [[ $# -gt 1 ]]; then
 		vi -p $@
-	else
+	elif [[ $# -gt 0 ]]; then
 		vi $@
+	else
+		vf
 	fi
 }
 
