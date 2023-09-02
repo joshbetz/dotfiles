@@ -201,7 +201,7 @@ function! OpenInFreshWindowOrNewTab()
     endif
 endfunction
 nnoremap <leader>f :call OpenInFreshWindowOrNewTab()<cr>
-nnoremap <C-p> :call OpenInFreshWindowOrNewTab()<cr>
+nnoremap <C-p> :Files<cr>
 
 nnoremap <leader>r :Rg<cr>
 
