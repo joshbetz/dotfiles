@@ -11,10 +11,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
-Plug 'preservim/nerdtree'
+
+" Filesystem
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Lint
 Plug 'w0rp/ale'
@@ -175,11 +177,6 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 " gitgutter
 autocmd BufWritePost * GitGutter
 
-" ctrlp
-let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching = 100 " cache if > 100 files
-let g:ctrlp_max_depth = 10
-
 " vim-airline
 set laststatus=2
 
@@ -189,12 +186,33 @@ let g:markdown_fenced_languages = ['javascript', 'go', 'php']
 " vim-go
 let go_def_mapping_enabled=0
 
-" NERDTree
-let NERDTreeMouseMode=2
-nmap <leader>e :NERDTree<cr>
-autocmd VimEnter NERD_tree_1 enew | execute 'NERDTree '.argv()[0]
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" fzf
+function! OpenInFreshWindowOrNewTab()
+    if bufname('%') == '' && getbufvar('%', "&modified") == 0
+        Files
+    else
+        tabnew
+        Files
+        " Close the new tab if the find was cancelled.
+        if bufname('%') == ''
+            tabclose
+        endif
+    endif
+endfunction
+nnoremap <leader>f :call OpenInFreshWindowOrNewTab()<cr>
+nnoremap <C-p> :call OpenInFreshWindowOrNewTab()<cr>
 
+" fzf ripgrep
+if executable("rg")
+    command! -bang -nargs=* Rg
+          \ call fzf#vim#grep(
+          \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+          \   <bang>0 ? fzf#vim#with_preview('up:60%')
+          \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+          \   <bang>0)
+
+    nnoremap <leader>r :Rg<cr>
+endif
 
 ""
 " Colors

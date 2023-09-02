@@ -6,7 +6,7 @@ if which nvim > /dev/null; then
 fi
 
 vi() {
-	vim ${@:-.}
+	vim $@
 }
 
 v() {
