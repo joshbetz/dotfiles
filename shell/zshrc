@@ -14,6 +14,8 @@ setopt COMPLETE_IN_WORD
 
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+fpath=($HOME/.zsh-completions $fpath)
+
 export WORDCHARS='*?[]~=&;!#$%^(){}'
 
 # ========
