@@ -23,7 +23,7 @@ Plug 'w0rp/ale'
 
 " Language / Syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-markdown'
 
 Plug 'github/copilot.vim'
