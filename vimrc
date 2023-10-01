@@ -188,22 +188,8 @@ let go_def_mapping_enabled=0
 
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-function! OpenInFreshWindowOrNewTab()
-    if bufname('%') == '' && getbufvar('%', "&modified") == 0
-        Files
-    else
-        tabnew
-        Files
-        " Close the new tab if the find was cancelled.
-        if bufname('%') == ''
-            tabclose
-        endif
-    endif
-endfunction
-nnoremap <leader>f :call OpenInFreshWindowOrNewTab()<cr>
 nnoremap <C-p> :Files<cr>
-
-nnoremap <leader>r :Rg<cr>
+nnoremap <C-f> :Rg<cr>
 
 ""
 " Colors
