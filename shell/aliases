@@ -1,4 +1,4 @@
-alias password='openssl rand -base64 64 | head -c 64'
+alias password='openssl rand -base64 100 | head -c 100 | tr -d "\n"'
 
 # vim
 if which nvim > /dev/null; then
