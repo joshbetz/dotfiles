@@ -34,7 +34,9 @@ alias lla='ll -a'
 # Show history
 alias history='fc -l 1'
 
-alias cdd='cd $(find . -type d -print | fzf)'
+cdd() {
+	cd $(find . -type d -name "*${1}*" -not -path '*/.git/*' -not -path './.git' -print | fzf)
+}
 
 # CD Aliases
 take() { mkdir $1 && cd $1; }
