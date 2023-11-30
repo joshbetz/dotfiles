@@ -3,6 +3,7 @@ tap "homebrew/cask-versions"
 
 brew "autojump"
 brew "awscli"
+brew "bat"
 brew "colordiff"
 brew "fzf"
 brew "gh"
