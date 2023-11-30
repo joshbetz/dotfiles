@@ -1,4 +1,4 @@
-set guifont=GeistMono-Light:h16
+set guifont=GeistMono-Medium:h16
 set spell
 
 " Remove unnecessary application chrome
