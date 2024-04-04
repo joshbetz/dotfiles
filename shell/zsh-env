@@ -6,3 +6,5 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source ~/.josh/shell/zsh-plugins/zsh-autosuggestions.zsh
 bindkey '^I' complete-word
 bindkey '\e' autosuggest-accept
+
+source ~/.josh/shell/zsh-plugins/fzf-key-bindings.zsh
