@@ -33,6 +33,7 @@ brew "wallpaper"
 brew "xz"
 brew "ykman"
 brew "ykpers"
+brew "ynqa/tap/jnv"
 brew "zsh"
 
 #
