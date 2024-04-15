@@ -13,6 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-fugitive'
 
 " Filesystem
 Plug 'junegunn/fzf'
@@ -169,6 +170,8 @@ map <Left> <c-w>h
 " Conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR> " jump to conflict markers
+
+nnoremap <leader>b :Git blame<cr>
 
 
 ""
