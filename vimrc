@@ -207,7 +207,9 @@ call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 
 " fzf
+let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+nnoremap <leader>f :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-p> :Files<cr>
 nnoremap <C-f> :Rg<cr>
 
