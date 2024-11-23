@@ -24,7 +24,6 @@ Plug 'w0rp/ale'
 
 " Language / Syntax
 Plug 'leafgarland/typescript-vim'
-Plug 'mhartington/nvim-typescript', { 'build': './install.sh' }
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-markdown'
