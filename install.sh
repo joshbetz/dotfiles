@@ -20,7 +20,7 @@ ln -sfnv $DIR/gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -sfnv $DIR/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 # Vim
-pip install --break-system-packages --user 'pynvim @ git+https://github.com/neovim/pynvim'
+python3 -m pip install --break-system-packages --user 'pynvim @ git+https://github.com/'
 mkdir -p ~/.config/nvim
 ln -sfnv $DIR/nvim ~/.config/nvim/init.vim
 ln -sfnv $DIR/vimrc ~/.vimrc
