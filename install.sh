@@ -11,8 +11,9 @@ ln -sfnv $DIR/shellrc ~/.zshrc
 ln -sfnv $DIR/shellrc ~/.bashrc
 source $DIR/shellrc
 
-# Hyperterm
-ln -sfnv $DIR/hyperterm.js ~/.hyperterm.js
+# Ghostty
+mkdir -p ~/.config/ghostty
+ln -sfnv $DIR/.config/ghostty/config ~/.config/ghostty/config
 
 # GPG
 mkdir -p ~/.gnupg
