@@ -2,3 +2,5 @@ font-family = GeistMono Nerd Font Mono
 theme = OneHalfDark
 font-size = 16
 window-padding-x = 8
+resize-overlay = never
+copy-on-select = false
