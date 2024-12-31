@@ -5,9 +5,6 @@ export VISUAL="vim"
 PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
 eval "$(brew shellenv)"
 
-# Load ssh keys automatically
-ssh-add -A 2>/dev/null
-
 # Source autojump
 [[ -f /opt/homebrew/bin/brew ]] && [[ -s $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh ]] && . $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/autojump.sh
 
