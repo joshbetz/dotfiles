@@ -1,6 +1,9 @@
-font-family = GeistMono Nerd Font Mono
-theme = OneHalfDark
+font-family = Geist Mono
+theme = Tomorrow Night
 font-size = 16
 window-padding-x = 8
 resize-overlay = never
 copy-on-select = false
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
