@@ -10,7 +10,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Editor
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/goyo.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
@@ -235,32 +234,3 @@ syntax enable
 set background=dark
 colorscheme onedark
 let g:airline_theme='base16_onedark'
-
-
-""
-" Goyo
-""
-function! s:auto_goyo()
-	if &ft == 'markdown' && winnr('$') == 1
-		Goyo 80
-	elseif exists('#goyo')
-		Goyo!
-	endif
-endfunction
-
-function! s:goyo_enter()
-        set wrap
-        set linebreak
-        set textwidth=0
-        set wrapmargin=0
-endfunction
-
-function! s:goyo_leave()
-	if winnr('$') < 2
-		silent! :q
-	endif
-endfunction
-
-autocmd BufNewFile,BufRead * call s:auto_goyo()
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()

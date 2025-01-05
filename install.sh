@@ -26,6 +26,8 @@ mkdir -p ~/.config/nvim
 ln -sfnv $DIR/nvim ~/.config/nvim/init.vim
 ln -sfnv $DIR/vimrc ~/.vimrc
 ln -sfnv $DIR/gvimrc ~/.gvimrc
+mkdir -p ~/.vim/after/ftplugin
+find $DIR/.vim -type f | xargs -I{} ln -snfv {} $HOME/{}
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall! +PlugUpdate +PlugClean! +qall
