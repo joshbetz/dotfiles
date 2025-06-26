@@ -1,5 +1,5 @@
 if which starship > /dev/null; then
-	eval $(starship init zsh)
+	eval "$(starship init zsh)"
 fi
 
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
