@@ -8,11 +8,15 @@ setopt EXTENDED_GLOB
 # emacs mode
 bindkey -e
 
-# tab completion
+# Smarter completion initialization, compile daily
 autoload -Uz compinit
 setopt COMPLETE_IN_WORD
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
 
-compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 fpath=($HOME/.zsh-completions $fpath)
 
