@@ -8,3 +8,4 @@ bindkey '^I' complete-word
 bindkey '\e' autosuggest-accept
 
 source ~/.josh/shell/zsh-plugins/fzf-key-bindings.zsh
+source ~/.josh/shell/zsh-plugins/w.zsh
