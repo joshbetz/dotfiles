@@ -29,14 +29,6 @@ Plug 'tpope/vim-markdown'
 
 Plug 'github/copilot.vim'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 " Initialize plugin system
 call plug#end()
 
@@ -186,10 +178,6 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 " Plugins
 ""
 
-"deoplete
-let g:deoplete#enable_at_startup = 1
-set completeopt-=preview
-
 " gitgutter
 autocmd BufWritePost * GitGutter
 
@@ -201,7 +189,6 @@ let g:markdown_fenced_languages = ['javascript', 'go', 'php']
 
 " vim-go
 let go_def_mapping_enabled=0
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 
 " fzf
